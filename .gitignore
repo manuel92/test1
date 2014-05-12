@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+eci-sublime-project.sublime-project
+eci-sublime-project.sublime-workspace
