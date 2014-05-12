@@ -1,0 +1,249 @@
+body #page_bg{
+    font-family: sans-serif;
+    background-attachment: scroll;
+    position: center;
+    width: 400px;
+    margin: 0 auto;
+    
+}
+button, input, select, textarea{
+  font-family: inherit;
+  font-size: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+
+}
+
+.top-links{
+	background-color: #f6f6f6;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	font-size: 0.8em;
+	height:  3em;
+	margin-top: -13px;
+}
+
+.top-links a{
+	color: #6d6d6d;
+	text-decoration: none;
+}
+.mainmenu  { 
+	list-style: none;
+	font-size: 0.9em;
+	font-weight: 700;
+	padding-top: 10px;
+}
+
+.mainmenu li{
+	background-image: url('../imgs/mainmenu.png');
+	background-repeat: no-repeat;
+	position: relative;
+	
+}
+
+.mainmenu li a{
+ 	display: inline-block;
+	padding-left: 20px;
+
+}
+.mainmenu li a:hover{
+	color: #4e4e4e;
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+.top-right{
+	
+	width: 50%;
+	font-size: 0.9em;
+	margin-left: 600px;
+	margin-top: -25px;
+	list-style:  none;
+}
+
+.top-right li{
+	 
+	background: url('../imgs/menuright.png') no-repeat right;  
+	padding: 10px 20px;
+	display: inline; 
+
+}
+
+.top-right li a{
+	text-decoration:none;
+
+	
+}
+.top-right li a:hover{
+	color: #333333;
+	text-decoration: underline;
+}
+
+#logo  {
+	float:left;
+	margin: 27px 13px 0 0;
+	background-image: url('../imgs/logo2.png');
+	height: 43px;
+	width: 182px; 
+
+}
+
+#search-box{
+	font-size: 0.8em;
+	float: right;
+	width: 84%;
+	margin: 0px 0.6em ;
+	background-color: #f6f6f6;
+	margin-top: 15px;
+
+}
+
+.search-scope-container{
+  padding: 0px 1em;
+  float: left;
+  margin-top: 5px;
+  list-style:  none;
+  font-family: Arial,Helvetica;
+  width: 4.5em;
+}
+
+.search-scope{
+	background-color: #f6f6f6;
+	padding: 0px 0.75em;
+	text-align: center;
+}
+.search-scope-container li{	
+	background: url('../imgs/row-scope.png') no-repeat right;
+}
+.search-scope-container li a{
+	color: #000000;
+	text-decoration: none;
+
+}
+
+.search-input-container{
+	width:78%;
+	float: left;
+	margin-top: 5px;
+}
+.search-input-container:hover {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #6d6d6d;
+
+}
+#search-input{
+	width: 100%;
+	background-color: #ffffff;
+	padding: 0.75em;
+	border-style: solid;
+	border-color: #cccccc;
+	border-image-source: none;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-width: 1 1 1 1;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	border-width: 0px 1px;
+
+}
+
+#search-input:focus{
+  background-color: #ffffcc;
+  border-top-color: #dddd00;
+  border-right-color-value: #dddd00;
+  border-bottom-color: #dddd00;
+  border-left-color-value: #dddd00;
+}
+.search-button{
+	background-image: url('../imgs/search.png');
+	background-repeat: no-repeat;
+	background-color: #f6f6f6;
+	border: 0px;
+	height: 19px;
+	width: 19px; 
+	margin-top: 12px;
+	margin-left: 10px;
+	
+}
+#menucenter{ 
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 0.75em;
+
+
+}
+#menucenter li{
+	display: inline;
+	padding: 5px 15px;
+}
+#menucenter li a{
+	text-decoration: none;
+	color: #6d6d6d;
+	margin: 0px;
+	padding-bottom: 0.5em;
+	border-bottom: 5px solid transparent;
+	
+}
+#menucenter li:first-child{
+	margin-left: 0em !important;
+}
+#menucenter a:active{
+	border-bottom: 5px solid #008c2e;
+	
+}
+/*
+.menucenter li a:hover{
+	background-image: url('../imgs/menucenter.png');
+	margin-bottom: -5px;
+	background-repeat: repeat-x;
+	background-position: 10px 16px;
+	text-decoration: none;
+	color:#313131;
+	transition: #148639 3s linear 1s;
+}
+*/
+#menucenter a:hover{
+	color: #313131;
+	border-bottom: 5px solid #6d6d6d;
+
+}
+#menucenter .current{
+	border-bottom: 5px solid #008c2e;
+
+}
+
+#content{
+	
+
+}
+.leftbottom{
+	float: left;
+	padding-left: 200px;
+
+}
+
+.leftbottom li{
+	list-style: none;
+	display: list-item;
+
+}
+.leftbottom li a{
+	color: #6d6d6d;
+	text-decoration: none;
+}
+.maincontent{
+	
+
+
+}
+
+#footer{
+	background-color: #f6f6f6;
+}
+.icono{
+	background: url('../imgs/iconfooter.png') no-repeat;
+	height: 78px;
+	width: 570px;
+}
