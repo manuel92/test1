@@ -17,6 +17,7 @@ button, input, select, textarea{
   margin-left: 0px;
 
 }
+
 #top{
 	background-color: #f6f6f6;
 	background-repeat: repeat;
@@ -26,8 +27,8 @@ button, input, select, textarea{
 }
 
 .top-links{
-	font-size: 0.8em;
-	margin-top: -55px;
+	font-size: 0.74em;
+	margin-top: -50px;
 
 	
 }
@@ -108,7 +109,6 @@ button, input, select, textarea{
 	margin: 0px ;
 	background-color: #f6f6f6;
 	margin-top: 15px;
-	margin-left: 255px;
 
 }
 
@@ -180,25 +180,23 @@ button, input, select, textarea{
 	margin-left: 10px;
 	
 }
-#menu{
+#menu {
 	float:left;
 	margin-top: 4px;
 	margin-left: -5%;
 }
-#menucenter{ 
+#menucenter { 
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	font-size: 0.75em;
 	width: 1000px;
 	
-
-
 }
-#menucenter li{
+#menucenter li {
 	display: inline;
 	padding: 5px 15px;
 }
-#menucenter li a{
+#menucenter li a {
 	text-decoration: none;
 	color: #6d6d6d;
 	margin: 0px;
@@ -206,10 +204,13 @@ button, input, select, textarea{
 	border-bottom: 5px solid transparent;
 	
 }
-#menucenter li:first-child{
+
+#menucenter li:first-child {
 	margin-left: 0em !important;
+
 }
-#menucenter a:active{
+
+#menucenter a:active {
 	border-bottom: 5px solid #008c2e;
 	padding-bottom: 0.1em;
 	
@@ -262,6 +263,7 @@ button, input, select, textarea{
 	border-width: 1px 0;
 	padding: 1em 0 .75em 0;
 	text-transform: uppercase;
+	font-size: .75em;
 }
 #breadcrumbs li{
 	display: inline-block;
@@ -275,12 +277,8 @@ button, input, select, textarea{
 	padding: 0 .5em;
 	color: #ccc;
 }
-.leftbottom{
-	float: left;
-	padding-left: 200px;
 
-}
-
+/*
 .leftbottom li{
 	list-style: none;
 	display: list-item;
@@ -290,6 +288,125 @@ button, input, select, textarea{
 	color: #6d6d6d;
 	text-decoration: none;
 }
+*/
+.leftbottom{
+	float: left;
+	
+	margin-top: -0.5em;
+	display: block;
+	width: 23.33333333%;
+
+}
+
+nav {
+	font-size:  0.74em;
+	letter-spacing: .05em;
+	display: block;
+
+}
+
+nav ul{
+	margin-bottom: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+
+
+nav ul li {
+	text-align: -webkit-match-parent;
+	
+
+}
+
+nav ul ul {
+	margin-top: .8em;
+	clear: left;
+
+}
+
+nav ul ul li {
+	font-weight: bold;
+	line-height: 1.2em;
+	margin: .7em 0;
+
+
+}
+
+nav ul ul li a {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0.5em;
+	color: #888 ;
+	text-decoration: none;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.25s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay: initial;
+	border-left-width: 0.25em;
+	border-left-style: solid;
+	border-left-color: transparent;
+	font-weight: normal;
+	-webkit-transition:all .25s ease-in-out;
+
+
+}
+
+nav ul ul li a:hover {
+	color: #000;
+	text-decoration: underline;
+	border-color: #ccc;
+	outline: 0;
+
+}
+
+hr {
+	
+	height: 0;
+
+}
+
+
+nav hr {
+	border:none;
+	border-top: 1px solid #f6f6f6;
+}
+
+nav hr.thin {
+	width: 60%;
+	border-color: #ccc;
+	border-top-width: 1px;
+	text-align: left;
+	margin: .5em 0 1em .6em;
+}
+
+h3 a {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	color: #000;
+	line-height: 1.25em;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border-bottom: 1px dotted #CCC;
+	margin-top: 0.6em;
+	display: inline-block;
+
+}
+
+h3 a:hover {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	color: #000;
+	line-height: 1.25em;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
+
 .maincontent{
 	
 
@@ -298,7 +415,9 @@ button, input, select, textarea{
 
 #footer{
 	background-color: #f6f6f6;
+	padding-top: 1
 }
+
 .icono{
 	background: url('../imgs/iconfooter.png') no-repeat;
 	height: 78px;
