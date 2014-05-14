@@ -189,7 +189,6 @@ button, input, select, textarea{
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	font-size: 0.75em;
-	width: 1000px;
 	
 }
 #menucenter li {
@@ -204,15 +203,15 @@ button, input, select, textarea{
 	border-bottom: 5px solid transparent;
 	
 }
-
+/*
 #menucenter li:first-child {
 	margin-left: 0em !important;
 
 }
-
+*/
 #menucenter a:active {
 	border-bottom: 5px solid #008c2e;
-	padding-bottom: 0.1em;
+	padding-bottom: 7px;
 	
 }
 /*
@@ -229,17 +228,17 @@ button, input, select, textarea{
 #menucenter a:hover{
 	color: #313131;
 	border-bottom: 5px solid #6d6d6d;
-	padding-bottom: 0.1em;
+	padding-bottom: 7px;
 
 }
 #menucenter .current{
 	border-bottom: 5px solid #008c2e;
-	padding-bottom: 0.1em;
+	padding-bottom: 7px;
 
 }
 
 #nav-top{
-	margin-top: 10%;
+	
 
 }
 #heading-top{
@@ -406,16 +405,160 @@ h3 a:hover {
 	text-decoration: underline;
 
 }
+nav h4 {
+	font-size: 0.9em;
+	text-transform: uppercase;
+	color: #000;
+	line-height: 1.25em;
+	margin-bottom: 0.5em;
+}
 
-.maincontent{
-	
+nav ul ul .precios li a {
+	background: url('../imgs/multifacets-checkbox.png');
+}
 
+.maincontent img{
+	max-width: 100%;
+	position: static !important;
+	border:0;
+	vertical-align: middle;
+	overflow: hidden;
+	position: relative;
 
 }
 
+.cabecera img{
+	position: static !important;
+	max-width: 76%;
+	vertical-align: middle;
+	padding-left: 6px;
+
+}
+.text-right a {
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	font-size: .9em;
+	padding: .7em 1.8em .5em;
+	border: 1px solid black;
+	margin-top: -42px; 
+	margin-left: 45em;
+
+}
+.promos {
+	height: 238px;
+	position: relative;
+	overflow: hidden;
+
+}
+.promos a{
+	text-decoration: none;
+}
+
+.promos img{
+	position: absolute;
+	max-width: 32%;
+	padding-top: 16px;
+	padding-left: 6px;
+		
+}
+
+.promos1 {
+	height: 238px;
+	position: relative;
+	overflow: hidden;
+
+}
+.promos a{
+	text-decoration: none;
+}
+
+.promos img{
+	position: absolute;
+	max-width: 32%;
+	padding-top: 16px;
+	padding-left: 6px;
+		
+}
+
+.p2 {
+	margin-left: 258px;
+
+}
+
+.p3 {
+	margin-left: 516px;
+}
+
+.overlaybox {
+	padding: 10px 0 apx 0;
+	bottom: 4em !important;
+	position: absolute;
+	background-color: rgba(0,86,96,0.85);
+	color: #fff;
+	pointer-events: none;
+	text-align: center;
+	width: 32%;
+	margin-left: 6px;
+}
+.overlaybox h3 {
+	text-transform: uppercase;
+	letter-spacing: 0;
+	position: relative;
+	font-size: .9em !important;
+	line-height: 1em;
+	
+	padding: 0;
+}
+.ver {
+	bottom: 0.8em !important;
+	position: absolute;
+	width: 100%;
+	margin-left: 79px;
+}
+
+.ver a span {
+	background-color: rgba(0,86,96,0.85);
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	padding: .7em 1.8em .5em;
+	font-size: .8em !important;
+	text-align: center;
+}
+/*
+.promo1{
+	background: url('../imgs/promo1.png') no-repeat left;
+	height: 251px;
+	width: 277px;
+	margin-left: 227px;
+	margin-top: -7px;
+
+}
+
+.promo2{
+	background: url('../imgs/promo2.png') no-repeat left;
+	height: 251px;
+	width: 277px;
+	margin-left: 512px;
+	margin-top: -250px;
+}
+
+.promo3{
+	background: url('../imgs/promo3.png') no-repeat left;
+	height: 251px;
+	width: 277px;
+	margin-left: 763;
+	margin-top: -251px;
+}
+*/
 #footer{
 	background-color: #f6f6f6;
-	padding-top: 1
+	
 }
 
 .icono{
