@@ -26,9 +26,26 @@ button, input, select, textarea{
 	height: 3em;
 }
 
+#promo-up {
+	background-color: #266f78;
+	width: 100%;
+	line-height: 2.5em;
+	color: #fff;
+	font-family: Arial,Helvetica;
+	font-size: .8em;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 1em;
+	letter-spacing:  .1em;
+	font-weight: bold;
+	
+
+}
+
 .top-links{
 	font-size: 0.74em;
-	margin-top: -50px;
+	margin-top: -83px;
 
 	
 }
@@ -89,8 +106,7 @@ button, input, select, textarea{
 	text-decoration: underline;
 }
 #header{
-	
-
+	margin-top: 43px;
 }
 
 #logo  {
@@ -745,15 +761,4 @@ form.sort label {
 	padding-bottom: .6em;
 	color: #6d6d6d;
 	text-decoration: none;
-}
-#footer {
-	background-color: #f6f6f6;
-	margin-top: 8997px;
-	
-}
-
-.icono {
-	background: url('../imgs/iconfooter.png') no-repeat;
-	height: 78px;
-	width: 570px;
 }
