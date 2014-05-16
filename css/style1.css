@@ -105,6 +105,13 @@ button, input, select, textarea{
 	color: #333333;
 	text-decoration: underline;
 }
+
+.cart {	
+	display: inline-block;
+	background: url('../imgs/shooping-bag.png') no-repeat right center;
+	padding-right: 2em;
+}
+
 #header{
 	margin-top: 43px;
 }
@@ -444,6 +451,25 @@ ul #filters ul ul {
 
 }
 
+nav ul ul.size {
+	margin: 0 0 1.25em 0;
+	display: inline-block;
+}
+
+nav ul ul.size li {
+	display: inline;
+	float: left;
+	width: 2.8em;
+	padding: .4em;
+	border: 1px solid #ccc;
+	margin: 0 .6em .3em 0;
+	text-align: center;
+}
+
+nav ul ul.size li a {
+	border: 0;
+	padding: 0;
+}
 
 .maincontent img{
 	max-width: 100%;
@@ -834,7 +860,7 @@ form.sort label {
 	background-color: #f6f6f6;
 	background-repeat: repeat;
 	background-attachment: scroll;
-	margin-top: 972px;
+	margin-top: 1081px;
 }
 
 .footer p {
