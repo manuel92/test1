@@ -310,12 +310,12 @@ button, input, select, textarea{
 	text-decoration: none;
 }
 */
-.leftbottom{
+.nav-left{
 	float: left;
 	
 	margin-top: -0.5em;
 	display: block;
-	width: 23.33333333%;
+	width: 23.%;
 
 }
 
@@ -470,7 +470,14 @@ nav ul ul.size li a {
 	border: 0;
 	padding: 0;
 }
+#main {
+	width: 100%;
+}
 
+.maincontent {
+	width: 77%;
+	float: left;
+}
 .maincontent img{
 	max-width: 100%;
 	position: static !important;
@@ -555,7 +562,7 @@ nav ul ul.size li a {
 	pointer-events: none;
 	text-align: center;
 	width: 32%;
-	height: 35%;
+	height: 24%;
 	margin-left: 6px;
 }
 .overlaybox h3 {
@@ -563,7 +570,24 @@ nav ul ul.size li a {
 	position: relative;
 	font-size: .9em !important;
 	line-height: 1em;
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
 
+}
+
+.overlaybox h2 {
+	display: block;
+	font-size: 1.5em;
+	-webkit-margin-before: -0.7em;
+	-webkit-margin-after: 0.83em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .ver {
@@ -754,6 +778,7 @@ form.sort label {
 
 .product h2 a {
 	text-decoration: none;
+	color: #888;
 }
 
 .product h3 {
@@ -820,6 +845,13 @@ form.sort label {
 
 .footer ul {
 	padding-right: 2em;
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
 }
 
 .footer ul li {
