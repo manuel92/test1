@@ -762,3 +762,86 @@ form.sort label {
 	color: #6d6d6d;
 	text-decoration: none;
 }
+
+#footer-bg {
+	 font-family: sans-serif;
+    background-attachment: scroll;
+    position: center;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.footer {
+	border-top: 5px solid #ccc;
+	clear: both;
+	margin-top: 0;
+	font-size: .8em;
+	color: #6d6d6d;
+	background: #f6f6f6 ;
+}
+
+.columns {
+	margin: 0.5em 0.83333333333333%;
+	float: left;
+	display: block;
+	width: 23.33333333%;
+}
+
+.footer h4 {
+	display: inline-block;
+	margin-top: 1em 0 .5em;
+}
+
+.footer ul {
+	padding-right: 2em;
+}
+
+.footer ul li {
+	margin: .5em 0;
+	line-height: 1.25em;
+	font-weight: bold;
+	text-align: left;
+	display: block;
+}
+
+.footer ul li a{
+	font-weight: lighter;
+	text-decoration: none;
+	color: #6d6d6d;
+
+}
+
+.phone {
+	background-color: #ccc;
+	color: #ccc;
+	display: inline-block;
+	margin: .3em 0 .4em .2em 1.5em;
+	font-size: 1.75em;
+	background: url('../imgs/phone-icon.png') no-repeat;
+	line-height: 1.5em;
+	float: right;
+}
+
+.footer-icono {
+	background: url('../imgs/iconfooter.png') no-repeat center;
+	height: 78px;
+	width: 570px;
+	margin-top: 401px;
+	margin-left: 183px;
+}
+
+.bck-fot {
+	background-color: #f6f6f6;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	margin-top: 972px;
+}
+
+.footer p {
+	clear: both;
+	color: #6d6d6d;
+	text-align: center;
+	font-size: .8em;
+	margin: 0;
+	padding: 2em 0;
+}
