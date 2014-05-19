@@ -6,10 +6,9 @@
 <link rel="stylesheet" href="css/style1.css" type="text/css"/>
 </head>
 <body>
-<div id="top"></div>
-<div id="promo-up">Envio gratis en toda la web del 9 al 17 de mayo. Pedidos + de 50</div>
-<div id="page-bg">
- <div class="top-links">
+<header>
+<div id="nav-top">
+ <div class="grid">
   <ul class="mainmenu">
    <li>
     <a href="#">
@@ -17,7 +16,9 @@
     </a>
    </li>
   </ul>
-  <ul class="top-right">
+
+  <div class="top-right">
+  <ul class="top-menu">
    <li>
     <a href="#">
       Mi cuenta
@@ -34,34 +35,51 @@
     </a>
     </li>
   </ul>
+
   <div id="cart-topmenu">
    <a href="#" class="cart">Mi cesta</a>
    </div>
   </div>
+  </div>
+  </div>
 
- <div id="header">
-  <div id="logo"></div>
+  <div class="grid">
+
+  <div id="logo" class="width">
+    <h2>
+     <a href="#" title="Inicio"></a>
+    </h2>
+  </div>
+
+  <div class="search_width">
   <form id="search-box">
    <div class="search-scope-container">
-    <label class="search-scope" for="search-input">
-     <li>
-      <a href="#">
-       Moda
-      </a>
-     </li>
+    <label class="search-scope" class="hidden">
     </label>
+    <div class="selectable">
+     <select>
+       <option>Moda</option>
+       <option>Todos los departamentos</option>
+       <option>Bebes</option>
+       <option>Belleza</option>
+       <option>Cine</option>
+     </select>
    </div>
+
    <div class="search-input-container">
-    <input type="search" id="search-input" value="Buscar..." />
+    <input type="search" id="search-input" value="Buscar..." placeholder="Buscar..." />
    </div>  
+
    <div class="search-button-container">
-    <input class="search-button" type="submit" value=""/>
+    <input value class="search-button" type="submit"/>
    </div>              
   </form>
   </div>
+  </div>
+</header>
 
-  <div id="menu">
-   <ul id="menucenter">
+ <div id="content-main" class="grid">
+   <ul id="menucenter" class="width12">
     <li>
      <strong>Moda:</strong>
     </li>
@@ -111,13 +129,14 @@
      </a>
     </li>
    </ul>   
-  </div>
 
- <div id="nav-top">
+ <div id ="content" class="width12">
+
   <img src="http://sgfm.elcorteingles.es/SGFM/Moda/07_home_moda_mujer_2014/Mujer/Listados/Imagenes/CIB_M_SemanaInternet.jpg">
   <h1 id="heading-top">
     Mujer
   </h1>
+
   <ul id="breadcrumbs">
    <li>
     <a href="#" title="Acceso a la portada de Moda y Complementos">
@@ -128,14 +147,14 @@
       Mujer
    </li>
   </ul>
- </div>
- <div id="main">
-   <div class="nav-left">
+  </div>
+  
+  <div id="content" class="width3">
     <nav>
-      <ul id="sections">
+      <ul>
        <li>
         <h3 id="sections-button">Mujer</h3>
-         <ul class="style">
+         <ul>
           <li>
            <a href="#" title="Marcas">Marcas</a>
           </li>
@@ -153,7 +172,7 @@
           </li>
          </ul>
          <hr class="thin">
-         <ul id="section-comp">
+         <ul>
           <li>
             <a href="#" title="Enlace a la seccion de Vestidos">Vestidos</a>
           </li>
@@ -226,10 +245,8 @@
          <h3>
           <a href="#" title="Enlace a la seleccion de Tallas Petites">TALLAS PETITES</a>
          </h3>  
-       </li> 
-      </ul> 
-      <ul id="filters">
-       <li class="">
+      <ul>
+       <li>
          <h4>Precio</h4>
           <ul class="Precios">
            <li>
@@ -281,30 +298,48 @@
           </ul>
        </li>
       </ul>
+      </li>
+      </ul>
     </nav>
    </div>
- <div id="maincontents">
-  <div class="cabecera">
-   <img src="http://sgfm.elcorteingles.es/SGFM/Moda/07_home_moda_mujer_2014/Mujer/Portada/Imagenes/CIB_Cabecera_Mujer.jpg">
-    <div class="text-right">
+
+   <div id="content" class="width9">
+
+    <div id="maincontents">
+
+      <div class="cabecera">
+       <a href="#">
+
+       <img src="http://sgfm.elcorteingles.es/SGFM/Moda/07_home_moda_mujer_2014/Mujer/Portada/Imagenes/CIB_Cabecera_Mujer.jpg">
+
+      </a>
+
+    <div class="overlay">
      <a href="#" title="Ver">Ver</a>
     </div>
-  </div>
-   <div class="promos">
-    <div class="p1">
-     <a href="#" title="Vestidos Desde 7.95">
+    </div>
+  
+<div class="promos">
+
+      <div class="p1">
+    <a href="#" title="Vestidos Desde 7.95">
+
       <img src="http://sgfm.elcorteingles.es/SGFM/Moda/07_home_moda_mujer_2014/Mujer/Minisites/Imagenes/A1_Vestidos.jpg">
+
      </a>
+     
     <div class="overlaybox">
      <h3>Vestidos</h3>
      <h2>Desde 7.95</h2>
     </div>
+
     <div class="ver">
      <a href="#">
-      <span>Ver </span>
+      <span>Ver</span>
      </a>
     </div>
-   </div>
+    </div>
+
   <div class="p2">
    <a href="#">
     <img src="http://sgfm.elcorteingles.es/SGFM/Moda/07_home_moda_mujer_2014/Mujer/Minisites/Imagenes/A2_Pantalones.jpg">
@@ -334,6 +369,7 @@
     </div>
   </div>
   </div>
+   
   <div id="shop">
    <form class="sort">
      <div class="mtop">
@@ -464,8 +500,6 @@
    </div>
   </div>
 
- 
-   </div>
   </div>
   </div>
   </div>
