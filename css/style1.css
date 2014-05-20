@@ -97,7 +97,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	width: 73.33333333%;
 }
 
-#content {
+.content {
 	margin-top: 1.5em;
 	margin: 0.5em 0.83333333333333%;
 	float: left;
@@ -202,6 +202,12 @@ header {
 
 #logo {
 	clear: left;
+}
+
+#logo h2 {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 #logo h2 a {
@@ -360,7 +366,7 @@ h1#heading-top{
 
 }
 
-#content img {
+.content img {
 
 	width: 100%;
 	
@@ -961,7 +967,297 @@ footer p {
 	margin: 0;
 	padding: 2em 0;
 }	
-]
+
+@media screen and (min-width: 1024px) and (max-width: 10000px) {
+	.grid {
+		width: 1024px;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+	.grid {
+		width: 700px;
+		margin: 0 auto;
+	}
+
+}
+
+@media screen and (min-width: 400px) and (max-width: 700px) {
+	.grid {
+		width: 400px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 479px) {
+	.grid {
+		max-width: 100%;
+	}
+
+	header {
+	border-top: none;
+	}
+	#nav-top {
+		margin-top: 5em;
+		height: 0;
+	}
+	
+
+	#mainmenu {
+		float: none;
+		display: none !important;
+		width: auto;
+		clear: both;
+		margin: 0 0.83333333333333% .3em;
+	}
+
+	#mainmenu li {
+		float: left;
+	}
+
+	#top-right {
+		float: none;
+		width: auto;
+		clear: both;
+		display: block;
+	}
+
+	#top-right ul li a {
+		padding: .5em 1em;
+	}
+
+	#top-menu {
+		font-size: .75em;
+		text-align: center;
+	}
+
+	#top-menu li {
+		display: inline-block;
+	}
+
+
+
+	#logo {
+		float: left;
+		clear: none;
+		margin-left: 1.6em;
+		margin-top: -0.5em;
+	}
+
+
+
+	.width {
+		float: none;
+		width: auto;
+		clear: both;
+		display: block;
+		margin-left: -1.4em;
+		border-top: 5px solid white;
+		position: fixed;
+		top: 0;
+
+
+	}
+	#logo a {
+		background-position: 0 -46px;
+		width: 197px;
+		height: 42px;
+	}
+
+	#logo h2 a {
+		background-image: url('../imgs/logo.png');
+	}
+
+	.width3 {
+		display: none !important;
+	}
+
+	#cart-topmenu {
+		text-align: right;
+		margin-top: -5em;
+		border: none !important;
+		box-shadow: none !important;
+		background: none !important;
+		float: right;
+		padding: 0 8px;
+	}
+
+	#cart-topmenu a {
+	padding-right: 2em;
+
+	}
+
+	#search-box {
+		width: 100%;
+		padding-bottom: 1px;
+		line-height: 1.5em;
+	}
+
+	#sema-inter img {
+		display: none;
+	}
+
+	#menucenter {
+		display: none;
+	}
+
+	#breadcrumbs {
+		display: none;
+	}
+
+	#nav-left {
+		display: none;
+	}
+
+	.cabecera {
+		display:none;
+	}
+
+	.promos {
+		display: none;
+	}
+
+	#maincontents {
+		overflow: inherit;
+	}
+
+	.content {
+		margin: 0.5em 0.83333333333333%;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		float: none;
+		clear: both;
+		display: block;
+	}
+
+	.width9 {
+		width: 48.33333333%;
+	}
+
+	.pagination {
+		display: none;
+	}
+
+	.product {
+		width: 100%;
+	}
+
+	.columns {
+		float: none;
+		width: auto;
+		clear: both;
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
