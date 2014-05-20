@@ -61,6 +61,10 @@ ul, ol {
 	margin: 0;
 }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+
 #grid{
     width: 1000px;
     margin: 0 auto;
@@ -364,6 +368,7 @@ h1#heading-top{
 
 #breadcrumbs li {
 	display: inline-block;
+	margin-left: 0px;
 
 }
 
@@ -420,6 +425,14 @@ nav ul ul li a {
 	font-weight: normal;
 }
 
+nav ul ul li a:hover {
+	color: #000;
+	text-decoration: underline;
+	border-color: #ccc;
+	outline: 0;
+
+}
+
 nav a {
 	color: #888;
 	text-decoration: none;
@@ -453,12 +466,52 @@ nav h3 a {
 	margin-top: .6em;
 }
 
+h3 a:hover {
+	font-size: inherit;
+	text-transform: uppercase;
+	color: #000;
+	line-height: 1.25em;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
+
 nav h4 {
 	font-size: 0.9em;
 	text-transform: uppercase;
 	color: #000;
 	line-height: 1.25em;
 	margin-bottom: 0.5em;
+}
+
+.precios li a {
+	background: url('../imgs/multifacets-checkbox.png') no-repeat 0 -1px;
+	display: inline-block;
+	padding-left: 2em;
+	border: 0 !important;
+	line-height: normal;
+}
+.precios li a:hover {
+	
+}
+
+nav ul ul.size li a{
+	border: 0px;
+	padding: 0;
+}
+
+ul.size li {
+	display: inline;
+	width: 2.8em;
+	padding: .4em;
+	border: 1px solid #ccc;
+	margin: 0 .6em .3em 0;
+	text-align: center;
+	float: left;
+}
+
+ul.size li {
+
 }
 
 .width9 {
@@ -478,6 +531,13 @@ nav h4 {
 	vertical-align: middle;
 	padding-left: 6px;
 
+}
+
+.cabecera img {
+	position: static !important;
+	vertical-align: middle;
+	padding-left: 6px;
+	max-width: 99%;
 }
 
 .overlay {
@@ -510,14 +570,12 @@ nav h4 {
 
 .promos img{
 	position: absolute;
+	max-width: 32%;
+	padding-top: 16px;
+	padding-left: 6px;
 	 
 		
 }
-
-.grid img {
-	max-width: 100%;
-}
-
 
 .p2 {
 	margin-left: 258px;
@@ -540,6 +598,7 @@ nav h4 {
 	height: 24%;
 	margin-left: 6px;
 }
+
 .overlaybox h3 {
 	text-transform: uppercase;
 	position: relative;
@@ -813,21 +872,19 @@ form.sort label {
 	position: relative;
 	height: 425px !important;
 }
-#footer-bg {
-	 font-family: sans-serif;
-    background-attachment: scroll;
-    position: center;
-    width: 1000px;
-    margin: 0 auto;
+
+footer {
+	background: #f6f6f6;
+	clear: both;
+
 }
 
-.footer {
-	border-top: 5px solid #ccc;
+#bottom-links {
 	clear: both;
+	border-top: 5px solid #ccc;
 	margin-top: 0;
-	font-size: .8em;
 	color: #6d6d6d;
-	background: #f6f6f6 ;
+	font-size: .8em;
 }
 
 .columns {
@@ -837,12 +894,12 @@ form.sort label {
 	width: 23.33333333%;
 }
 
-.footer h4 {
+footer h4 {
 	display: inline-block;
 	margin-top: 1em 0 .5em;
 }
 
-.footer ul {
+footer ul {
 	padding-right: 2em;
 	display: block;
 	list-style-type: disc;
@@ -856,7 +913,7 @@ form.sort label {
 	margin-top: -18px;
 }
 
-.footer ul li {
+footer ul li {
 	margin: .5em 0;
 	line-height: 1.25em;
 	font-weight: bold;
@@ -864,7 +921,7 @@ form.sort label {
 	display: block;
 }
 
-.footer ul li a{
+footer ul li a{
 	font-weight: lighter;
 	text-decoration: none;
 	color: #6d6d6d;
@@ -886,7 +943,7 @@ a.phone {
 	padding: 0 27px;	
 	text-decoration: none;
 }
-.footer-icono {
+footer-icono {
 	background: url('../imgs/iconfooter.png') no-repeat center;
 	height: 78px;
 	width: 570px;
@@ -894,14 +951,7 @@ a.phone {
 	margin-left: 183px;
 }
 
-.bck-fot {
-	background-color: #f6f6f6;
-	background-repeat: repeat;
-	background-attachment: scroll;
-	margin-top: 1081px;
-}
-
-.footer p {
+footer p {
 	clear: both;
 	color: #6d6d6d;
 	text-align: center;
@@ -916,7 +966,22 @@ a.phone {
 #header{
 	margin-top: 43px;
 }
+#footer-bg {
+	 font-family: sans-serif;
+    background-attachment: scroll;
+    position: center;
+    width: 1000px;
+    margin: 0 auto;
+}
 
+.footer {
+	border-top: 5px solid #ccc;
+	clear: both;
+	margin-top: 0;
+	font-size: .8em;
+	color: #6d6d6d;
+	background: #f6f6f6 ;
+}
 #logo  {
 	float:left;
 	margin: 27px 13px 0 0;
@@ -924,7 +989,12 @@ a.phone {
 	
 
 }
-
+.bck-fot {
+	background-color: #f6f6f6;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	margin-top: 1081px;
+}
 .search-scope-container li{	
 	background: url('../imgs/row-scope.png') no-repeat right;
 }
@@ -1146,13 +1216,7 @@ nav ul ul li a {
 
 }
 
-nav ul ul li a:hover {
-	color: #000;
-	text-decoration: underline;
-	border-color: #ccc;
-	outline: 0;
 
-}
 
 hr {
 	
@@ -1188,27 +1252,13 @@ h3 a {
 
 }
 
-h3 a:hover {
-	font-size: 1.1em;
-	text-transform: uppercase;
-	color: #000;
-	line-height: 1.25em;
-	font-weight: bold;
-	text-decoration: underline;
 
-}
 
 
 .precios li {
 
 }
-.precios li a {
-	background: url('../imgs/multifacets-checkbox.png') no-repeat 0 -1px;
-	display: inline-block;
-	padding-left: 2em;
-	border: 0 !important;
-	line-height: normal;
-}
+
 
 ul #filters ul ul {
 	line-height: 0;
@@ -1220,15 +1270,7 @@ nav ul ul.size {
 	display: inline-block;
 }
 
-nav ul ul.size li {
-	display: inline;
-	float: left;
-	width: 2.8em;
-	padding: .4em;
-	border: 1px solid #ccc;
-	margin: 0 .6em .3em 0;
-	text-align: center;
-}
+
 
 nav ul ul.size li a {
 	border: 0;
