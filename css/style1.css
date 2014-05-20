@@ -788,7 +788,7 @@ form.sort label {
 .product {
 	width: 30.5%;
 	float: left;
-	margin: 0 10px;
+	margin: 0 9px;
 	border-radius: 5px;
 	min-height: 440px;
 }
