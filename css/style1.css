@@ -1,5 +1,7 @@
 body {
 	font-family: sans-serif;
+	display: block;
+	margin: 0px;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -20,7 +22,7 @@ strong {
 }
 li {
 	display: list-item;
-	margin-left:  2.5em;
+
 }
 
 h3 {
@@ -76,7 +78,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	margin: 0 auto;
 }
 /* para git*/
+.width12 {
+	width: 98.33333333%;
+}
 
+.width {
+	margin: 0.5em 0.83333333333333%;
+	float: left;
+	display: block;
+	width: 31.66666667%;
+}
+
+.width3 {
+	width: 23.33333333%;
+}
+
+.width9 {
+	width: 73.33333333%;
+}
+
+#content {
+	margin-top: 1.5em;
+	margin: 0.5em 0.83333333333333%;
+	float: left;
+	display: block;
+}
+
+header {
+	border-top: 5px solid #000;
+}
 
 #nav-top {
 	background-color: #f6f6f6;
@@ -91,42 +121,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 
-.mainmenu  { 
+#mainmenu  { 
 	float: left;
 	display: block;
 	margin: 0 0.83333333333333% .3em;
-	width: 23.33333333%;
-	
+	padding-top: 10px;
 	
 }
 
-.mainmenu li{
+#mainmenu li{
 	float: left;
 	background-image: url('../imgs/mainmenu.png');
 	background-repeat: no-repeat;
 	position: relative;
-	margin-left: -37px;
 	
 }
 
-.mainmenu li a{
- 	text-transform: uppercase;
+#mainmenu li a{
  	font-size: .85em;
  	font-weight: bold;
 	padding-left: 20px;
-	text-decoration: none;
-	color: #6d6d6d;
 
 }
 
-.mainmenu li a:hover{
+#mainmenu li a:hover{
 	color: #4e4e4e;
 	text-decoration: underline;
 	font-weight: 700;
 
 }
 
-.top-right {
+#top-right {
 	text-align: right;
 	margin: 0.3em 0.83333333333333%;
 	float: left;
@@ -135,23 +160,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 }
 
-.top-right ul {
+#top-right ul {
 	display: inline-block;
 
 }
 
-.top-right ul li {
+#top-right ul li {
 	display: inline-block;
 
 }
 
-.top-right ul li a {
+#top-right ul li a {
 	display: inline-block;
 	padding: .5em 1em;
 	border-right: 1px solid #ccc;
 }
 
-.top-right #cart-topmenu {
+#top-right #cart-topmenu {
 	display: inline-block;
 	width: 99px;
 }
@@ -174,19 +199,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	text-decoration: underline;
 }
 
-header {
-	border-top: 5px solid #000;
-}
 
 #logo {
 	clear: left;
-}
-
-.width {
-	margin: 0.5em 0.83333333333333%;
-	float: left;
-	display: block;
-	width: 31.66666667%;
 }
 
 #logo h2 a {
@@ -207,7 +222,7 @@ header {
 #search-box {
 	font-size: 0.8em;
 	float: right;
-	width: 84%;
+	width: 72%;
 	margin: 0.6em 0;
 	background-color: #f6f6f6;
 	border: 1px solid #ccc;
@@ -215,7 +230,7 @@ header {
 
 }
 
-#search-box div {
+#search-box {
 	display: 0 1em;
 }
 
@@ -223,13 +238,13 @@ header {
   padding: 0px 1em;
  
 }
-
+/*
 .search-scope{
 	background-color: #f6f6f6;
 	padding: 0px 0.75em;
 	text-align: center;
 }
-
+*/
 .hidden {
 	display: none;
 }
@@ -242,6 +257,9 @@ header {
 .selectable select {
 	border: none;
 	position: absolute;
+	padding: 9px 0px;
+	width: 5%;
+	background-color: #f6f6f6;
 }
 
 #search-box .search-scope-container select option {
@@ -251,7 +269,8 @@ header {
 }
 
 #search-box .search-input-container{
-	width:78%;
+	width: 67%;
+	padding: 0 67px;
 
 }
 
@@ -266,7 +285,6 @@ header {
 
 #search-box .search-button-container {
 	text-align: right;
-	width: 11%;
 
 }
 
@@ -278,6 +296,7 @@ header {
 	height: 18px;
 	width: 18px; 
 	vertical-align: middle;
+	margin-top: -17px;
 	
 }
 
@@ -287,17 +306,8 @@ header {
 	letter-spacing: 0.1em;
 	font-size: .75em;
 	font-family: sans-serif;
-}
-
-#content {
-	margin-top: 1.5em;
-	margin: 0.5em 0.83333333333333%;
+	padding-left: 1em;
 	float: left;
-	display: block;
-}
-
-.width12 {
-	width: 98.33333333%;
 }
 
 #menucenter li {
@@ -381,10 +391,6 @@ h1#heading-top{
 	content: '>';
 	padding: 0 .5em;
 	color: #ccc;
-}
-
-.width3 {
-	width: 23.33333333%;
 }
 
 nav {
@@ -512,10 +518,6 @@ ul.size li {
 
 ul.size li {
 
-}
-
-.width9 {
-	width: 73.33333333%;
 }
 
 #maincontents {
@@ -959,7 +961,7 @@ footer p {
 	margin: 0;
 	padding: 2em 0;
 }	
-
+]
 
 
 /*
