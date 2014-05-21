@@ -709,6 +709,7 @@ form.sort label {
 
 .articulos {
 	margin-top: -23px;
+
 }
 
 .articulos label {
@@ -1024,6 +1025,19 @@ footer p {
 		font-size: .72em;
 	}
 
+	.products {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+	}
+
+	.product {
+		float: left;
+		width: 46.5%;
+		margin: 0 1% 1em 0;
+
+	}
 
 
 
@@ -1106,9 +1120,9 @@ footer p {
 		background-color: white;
 		background-repeat: repeat-x;
 		top: 0;
+		left: 0;
 		height: 3.7em;
-		margin: 0;
-		margin-left: -37px;
+		
 	}
 
 	.width {
@@ -1217,7 +1231,7 @@ footer p {
 	}
 
 	.articulos {
-		display: none;
+		float: right;
 	}
 
 	
@@ -1235,6 +1249,8 @@ footer p {
 		margin: 0 1% 1em 0;
 
 	}
+
+	
 
 	.pagination {
 
