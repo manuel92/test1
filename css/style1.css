@@ -4,6 +4,12 @@ body {
 	margin: 0px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block;
 }
@@ -76,7 +82,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .grid {
 	width: 1024px;	
 	margin: 0 auto;
+	padding: 0 1em;
 }
+
+.grid2 {
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0 1em;
+
+}
+
 /* para git*/
 .width12 {
 	width: 98.33333333%;
@@ -108,20 +123,20 @@ header {
 	border-top: 5px solid #000;
 }
 
-#nav-top {
+.top-links {
 	background-color: #f6f6f6;
 	font-size: .8em;
 	height: 3em;
 }
 
-#nav-top a {
+.top-links a {
 	color: #6d6d6d;
 	text-decoration: none;
 	display: inline-block;
 }
 
 
-#mainmenu  { 
+.top-left  { 
 	float: left;
 	display: block;
 	margin: 0 0.83333333333333% .3em;
@@ -129,7 +144,7 @@ header {
 	
 }
 
-#mainmenu li{
+.top-left li{
 	float: left;
 	background-image: url('../imgs/mainmenu.png');
 	background-repeat: no-repeat;
@@ -137,21 +152,21 @@ header {
 	
 }
 
-#mainmenu li a{
+.top-left li a{
  	font-size: .85em;
  	font-weight: bold;
 	padding-left: 20px;
 
 }
 
-#mainmenu li a:hover{
+.top-left li a:hover{
 	color: #4e4e4e;
 	text-decoration: underline;
 	font-weight: 700;
 
 }
 
-#top-right {
+.top-right {
 	text-align: right;
 	margin: 0.3em 0.83333333333333%;
 	float: left;
@@ -160,23 +175,23 @@ header {
 
 }
 
-#top-right ul {
+.top-right ul {
 	display: inline-block;
 
 }
 
-#top-right ul li {
+.top-right ul li {
 	display: inline-block;
 
 }
 
-#top-right ul li a {
+.top-right ul li a {
 	display: inline-block;
 	padding: .5em 1em;
 	border-right: 1px solid #ccc;
 }
 
-#top-right #cart-topmenu {
+.top-right #cart-topmenu {
 	display: inline-block;
 	width: 99px;
 }
@@ -887,7 +902,7 @@ footer {
 
 }
 
-#bottom-links {
+.bottom-links {
 	clear: both;
 	border-top: 5px solid #ccc;
 	margin-top: 0;
@@ -902,7 +917,7 @@ footer {
 	width: 23.33333333%;
 }
 
-footer h4 {
+.bottom-links h4 {
 	display: inline-block;
 	margin-top: 1em 0 .5em;
 }
@@ -992,18 +1007,27 @@ footer p {
 @media screen and (min-width: 0px) and (max-width: 479px) {
 	.grid {
 		max-width: 100%;
+
+	}
+
+	.grid2 {
+		max-width: 100%;
+		width: initial;
+
 	}
 
 	header {
 	border-top: none;
+
 	}
-	#nav-top {
+
+	.top-links {
 		margin-top: 5em;
 		height: 0;
 	}
 	
 
-	#mainmenu {
+	.top-left {
 		float: none;
 		display: none !important;
 		width: auto;
@@ -1011,19 +1035,16 @@ footer p {
 		margin: 0 0.83333333333333% .3em;
 	}
 
-	#mainmenu li {
+	.top-left li {
 		float: left;
 	}
 
-	#top-right {
+	.top-right {
 		float: none;
 		width: auto;
 		clear: both;
 		display: block;
-	}
-
-	#top-right ul li a {
-		padding: .5em 1em;
+		text-align: center;
 	}
 
 	#top-menu {
@@ -1035,29 +1056,42 @@ footer p {
 		display: inline-block;
 	}
 
-
-
-	#logo {
-		float: left;
-		clear: none;
-		margin-left: 1.6em;
-		margin-top: -0.5em;
+	#top-menu li a {
+		display: inline-block;
+		padding: .5em .2em;
+		border-right: 1px solid #ccc;
 	}
 
+	#top-menu li:last-child a {
+		border: none;
+	}
 
+	.header-static-mobile {
+		width: 110%;
+		border-top: 5px solid white;
+		position: fixed;
+		z-index: 9000010;
+		background-color: white;
+		top: 0;
+		height: 3.7em;
+		margin: 0;
+	}
 
 	.width {
 		float: none;
 		width: auto;
 		clear: both;
 		display: block;
-		margin-left: -1.4em;
-		border-top: 5px solid white;
-		position: fixed;
-		top: 0;
+	
+	}
 
+	#logo {
+		float: left;
+		clear: none;
+		margin-left: 1.6em;
 
 	}
+
 	#logo a {
 		background-position: 0 -46px;
 		width: 197px;
@@ -1087,10 +1121,23 @@ footer p {
 
 	}
 
+	.search_width {
+		float: none;
+		width: auto;
+		clear: both;
+		display: block;
+		padding: 0 1em;
+	}
+
 	#search-box {
-		width: 100%;
-		padding-bottom: 1px;
-		line-height: 1.5em;
+		width: 97%;
+		margin-top: 2em;
+		padding: 0 1em;
+	}
+
+	#content-main {
+		padding: 0 1em;
+
 	}
 
 	#sema-inter img {
@@ -1122,26 +1169,39 @@ footer p {
 	}
 
 	.content {
-		margin: 0.5em 0.83333333333333%;
-		margin-top: 0;
-		margin-left: 0;
-		margin-right: 0;
-		width: 100%;
 		float: none;
 		clear: both;
 		display: block;
+		margin: 0 0.83333333333333%;
 	}
 
 	.width9 {
-		width: 48.33333333%;
+		
 	}
 
-	.pagination {
+	form.sort {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	.articulos {
 		display: none;
+	}
+
+	
+
+	.products {
+		margin-top: 0;
+		margin-right: 0;
+		width: 133%;
+
 	}
 
 	.product {
 		width: 100%;
+		float: none;
+		margin: 0;
+
 	}
 
 	.columns {
@@ -1149,6 +1209,10 @@ footer p {
 		width: auto;
 		clear: both;
 		display: block;
+	}
+
+	.phone {
+		float: none;
 	}
 }
 
