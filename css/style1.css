@@ -74,13 +74,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .grid {
-	width: 1024px;	
+	max-width: 1024px;	
 	margin: 0 auto;
 	padding: 0 1em;
 }
 
 .grid2 {
-	width: 1024px;
+	max-width: 1024px;
 	margin: 0 auto;
 	padding: 0 1em;
 
@@ -575,6 +575,10 @@ ul.size li {
 
 }
 
+.overlay a:hover {
+	background-color: #fff;
+}
+
 .promos {
 	height: 238px;
 	position: relative;
@@ -644,7 +648,7 @@ ul.size li {
 }
 
 .ver a span {
-	background-color: rgba(0,86,96,0.85);
+	background-color: rgba(0,86,96,0.6);
 	color: #fff;
 	text-decoration: none;
 	display: inline-block;
@@ -653,6 +657,13 @@ ul.size li {
 	padding: .7em 1.8em .5em;
 	font-size: .8em !important;
 	text-align: center;
+}
+
+.ver a:hover {
+	background-color: rgba(0,86,96,0.9);
+
+
+
 }
 
 #shop {
@@ -1049,12 +1060,12 @@ footer p {
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
 	.grid {
-		width: 96%;
+		max-width: 768px;
 		margin: 0 auto;
 	}
 
 	.grid2 {
-		max-width: 100%;
+		max-width: 768px;
 		width: initial;
 	}
 
@@ -1309,8 +1320,9 @@ footer p {
 	}
 
 	label#n-art {
-		margin-left: 18em;
-	}
+		line-height: 6em;
+		margin-left: 0%;
+	}	
 
 	.articulos {
 		float: none;
@@ -1343,8 +1355,7 @@ footer p {
 	}
 
 	.pagination {
-		font-size: .6em;
-		margin-right: 3em;
+		display: none;
 	}
 
 	.columns {
