@@ -858,9 +858,9 @@ form.sort label {
 }
 
 .product {
-	width: 30.5%;
+	width: 32%;
 	float: left;
-	margin: 0 9px;
+	margin: 0 3px;
 	border-radius: 5px;
 	min-height: 440px;
 }
@@ -1015,6 +1015,21 @@ a.phone {
 	padding: 0 27px;	
 	text-decoration: none;
 }
+
+.back-top {
+	color: #6d6d6d;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.8em;
+}
+
+a.back-top:hover{
+	color: #000;
+	text-decoration: underline;
+	text-transform: uppercase;
+	letter-spacing: 0.8em;
+}
+
 footer-icono {
 	background: url('../imgs/iconfooter.png') no-repeat center;
 	height: 78px;
@@ -1103,16 +1118,12 @@ footer p {
 		display: none;
 	}
 
-
-
 }
 
 
 
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
-
-	
 
 	.grid {
 		width: 480px;
