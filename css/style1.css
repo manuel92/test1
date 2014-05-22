@@ -594,26 +594,21 @@ ul.size li {
 		
 }
 
-.p2 {
-	margin-left: 258px;
-
-}
-
-.p3 {
-	margin-left: 516px;
+.artwork {
+	float: left;
+	width: 33%;
 }
 
 .overlaybox {
-	padding: 10px 0 apx 0;
-	bottom: 4em !important;
-	position: absolute;
+	position: relative;
 	background-color: rgba(0,86,96,0.85);
 	color: #fff;
 	pointer-events: none;
 	text-align: center;
-	width: 32%;
-	height: 24%;
+	width: 97%;
 	margin-left: 6px;
+	margin-top: 52%;
+	padding-top: 0.1em;
 }
 
 .overlaybox h3 {
@@ -645,7 +640,6 @@ ul.size li {
 .ver {
 	bottom: 0.8em !important;
 	position: absolute;
-	width: 100%;
 	margin-left: 79px;
 }
 
