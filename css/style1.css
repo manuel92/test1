@@ -587,7 +587,7 @@ ul.size li {
 
 .promos img{
 	position: absolute;
-	max-width: 32%;
+	max-width: 32.3%;
 	padding-top: 16px;
 	padding-left: 6px;
 	 
@@ -596,7 +596,7 @@ ul.size li {
 
 .artwork {
 	float: left;
-	width: 33%;
+	width: 33.3%;
 }
 
 .overlaybox {
@@ -1034,7 +1034,7 @@ footer p {
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
 	.grid {
-		width: 768px;
+		width: 96%;
 		margin: 0 auto;
 	}
 
@@ -1093,6 +1093,14 @@ footer p {
 
 	.product li:first-child{
 		margin-right: 0 !important;
+	}
+
+	.pagination li#list-3 {
+		display: none;
+	}
+
+	.pagination li#list-2 {
+		display: none;
 	}
 
 
@@ -1221,6 +1229,7 @@ footer p {
 		position: fixed;
 		z-index: 999999999;
 		margin-top: -4em;
+		right: 0;
 	}
 
 	#cart-topmenu a {
@@ -1288,6 +1297,10 @@ footer p {
 		width: 100%;
 	}
 
+	label#n-art {
+		margin-left: 18em;
+	}
+
 	.articulos {
 		float: none;
 		width: 141%;
@@ -1310,10 +1323,16 @@ footer p {
 
 	}
 
-	
+	.pagination li#list-3 {
+		display: none;
+	}
+
+	.pagination li#list-2 {
+		display: none;
+	}
 
 	.pagination {
-
+		font-size: .6em;
 		margin-right: 3em;
 	}
 
@@ -1539,6 +1558,14 @@ footer p {
 		float: none;
 		margin: 0;
 
+	}
+
+	.pagination li#list-3 {
+		display: none;
+	}
+
+	.pagination li#list-2 {
+		display: none;
 	}
 
 	.columns {
