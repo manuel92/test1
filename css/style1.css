@@ -570,7 +570,8 @@ ul.size li {
 	padding: .7em 1.8em .5em;
 	border: 1px solid black;
 	margin-top: -42px; 
-	margin-left: 45em;
+	margin-right: 1em;
+	float: right;
 
 }
 
@@ -667,6 +668,7 @@ ul.size li {
 
 form.sort {
 	margin-top: 14px;
+	height: 2em;
 }
 
 .mtop {
@@ -701,8 +703,7 @@ form.sort {
 
 form.sort label {
 	font-size: .7em;
-	line-height: .9em;
-	float: left;
+	line-height: 1.9em;
 	margin-top: .2em;
 	padding: .4em .4em 0 0;
 }
@@ -714,6 +715,66 @@ form.sort label {
 
 .articulos label {
 	margin-left: 250px;
+}
+
+.pagination2 {
+	float: right;
+	font-size: .7em;
+	margin-top: 4px;
+	margin-right: -1px;
+	margin-left: 0;
+	margin-bottom: 0;
+	height: 3.5em;
+	
+}
+
+.pagination2 li {
+	display: inline;
+	margin-left: .8em;
+
+}
+
+
+
+.pagination2 li a {
+	padding-bottom: .6em;
+	text-decoration: none;
+	color: #6d6d6d;
+}
+
+.pagination2 li a.current {
+	color: #000;
+	border-bottom: 1px solid #000;
+}
+.pagination2 li#list-3 {
+	background: url('../imgs/items-per-sprite.png') bottom right no-repeat;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.pagination2 li#list-3 a {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+
+}
+
+.pagination2 li#list-2 {
+	background: url('../imgs/items-per-sprite.png') top left no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+
+}
+
+.pagination2 li#list-2 a {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+
 }
 
 .pagination {
@@ -1012,10 +1073,6 @@ footer p {
 		padding: .5em .4em;
 	}
 
-	.cabecera img {
-		display: none;
-	}
-
 	#content-main {
 		padding: 0 1em;
 
@@ -1029,14 +1086,19 @@ footer p {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		margin-top: 4%;
 
 	}
 
 	.product {
 		float: left;
-		width: 46.5%;
+		width: 48.9%;
 		margin: 0 1% 1em 0;
 
+	}
+
+	.product li:first-child{
+		margin-right: 0 !important;
 	}
 
 
@@ -1048,11 +1110,7 @@ footer p {
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
 
-	h1, h2, h3, h4, h5, h6 {
-		margin: 0;
-		padding: 0;
-		line-height: 1em;
-	}
+	
 
 	.grid {
 		width: 480px;
@@ -1146,6 +1204,12 @@ footer p {
 		height: 42px;
 	}
 
+	#logo h2 {
+		margin: 0;
+		padding: 0;
+		line-height: 1em;
+	}
+
 	#logo h2 a {
 		background-image: url('../imgs/logo.png');
 	}
@@ -1231,7 +1295,8 @@ footer p {
 	}
 
 	.articulos {
-		float: right;
+		float: none;
+		width: 141%;
 	}
 
 	
@@ -1240,6 +1305,7 @@ footer p {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		width: 143%;
 
 	}
 
@@ -1272,11 +1338,7 @@ footer p {
 
 @media screen and (min-width: 0px) and (max-width: 479px) {
 
-	h1, h2, h3, h4, h5, h6 {
-		margin: 0;
-		padding: 0;
-		line-height: 1em;
-	}
+
 	.grid {
 		max-width: 100%;
 
@@ -1370,8 +1432,16 @@ footer p {
 		height: 49px;
 	}
 
+	#logo h2 {
+		margin: 0;
+		padding: 0;
+		line-height: 1em;
+	}
+
 	#logo h2 a {
 		background-image: url('../imgs/logo.png');
+
+
 	}
 
 	.width3 {
