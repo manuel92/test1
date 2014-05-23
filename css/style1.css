@@ -236,7 +236,7 @@ header {
 #search-box {
 	font-size: 0.8em;
 	float: right;
-	width: 72%;
+	width: 84%;
 	margin: 0.6em 0;
 	background-color: #f6f6f6;
 	border: 1px solid #ccc;
@@ -244,35 +244,34 @@ header {
 
 }
 
-#search-box {
-	display: 0 1em;
+#search-box div{
+	display: table-cell;
 }
 
 #search-box .search-scope-container {
-  padding: 0px 1em;
+  padding: 0 1em;
+  width: 4.5em;
  
 }
-/*
-.search-scope{
+
+#search-box .search-scope {
 	background-color: #f6f6f6;
-	padding: 0px 0.75em;
+	padding: 0 .75em;
 	text-align: center;
 }
-*/
+
 .hidden {
 	display: none;
 }
 
 #search-box .search-scope-container select {
-	width: 4.5 em;
+	width: 4.5em;
+	margin-left: -1em;
 
 }
 
 .selectable select {
 	border: none;
-	position: absolute;
-	padding: 9px 0px;
-	width: 5%;
 	background-color: #f6f6f6;
 }
 
@@ -282,9 +281,21 @@ header {
 	line-height: 1.2em;
 }
 
+#search-box div span {
+	font-size: 1em;
+	vertical-align: middle;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.selectable span {
+	white-space: nowrap;
+	overflow: hidden;
+	z-index: 0;
+}
+
 #search-box .search-input-container{
-	width: 67%;
-	padding: 0 67px;
+	width: 78%;
 
 }
 
@@ -293,12 +304,13 @@ header {
 	background-color: #ffffff;
 	padding: 0.75em;
 	border: 1px solid #ccc;
-	border-width: 0px 1px;
+	border-width: 0 1px;
 
 }
 
 #search-box .search-button-container {
 	text-align: right;
+	width: 11%;
 
 }
 
@@ -310,7 +322,7 @@ header {
 	height: 18px;
 	width: 18px; 
 	vertical-align: middle;
-	margin-top: -17px;
+	
 	
 }
 
@@ -659,7 +671,7 @@ ul.size li {
 	text-align: center;
 }
 
-.ver a:hover {
+.ver a span:hover {
 	background-color: rgba(0,86,96,0.9);
 
 
@@ -1102,6 +1114,23 @@ footer p {
 		font-size: .72em;
 	}
 
+	#menucenter li {
+		margin-left: 0.7em;
+	}
+
+	.overlaybox {
+		margin-top: 35%;
+	}
+
+	.overlaybox h2 {
+		font-size: 1.3em;
+	}
+
+	.ver {
+		margin-left: 10%;
+		margin-bottom: 8%;
+	}
+
 	.products {
 		list-style: none;
 		margin: 0;
@@ -1137,7 +1166,7 @@ footer p {
 @media screen and (min-width: 480px) and (max-width: 767px) {
 
 	.grid {
-		width: 480px;
+		width: 100%;
 		margin: 0 auto;
 	}
 
@@ -1261,16 +1290,16 @@ footer p {
 
 	.search_width {
 		float: none;
-		width: auto;
+		width: 93.66666%;
 		clear: both;
 		display: block;
-		padding: 0 1em;
+		padding: 0 0;
 	}
 
 	#search-box {
-		width: 97%;
+		width: 99.33333%;
 		margin-top: 2em;
-		padding: 0 1em;
+		padding: 0 0;
 	}
 
 	#content-main {
@@ -1503,14 +1532,14 @@ footer p {
 
 	.search_width {
 		float: none;
-		width: auto;
+		width: 93.66666%;
 		clear: both;
 		display: block;
 		padding: 0 1em;
 	}
 
 	#search-box {
-		width: 97%;
+		width: 96.333%;
 		margin-top: 2em;
 		padding: 0 1em;
 	}
