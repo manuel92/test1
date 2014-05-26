@@ -1,6 +1,18 @@
 header {
 	border-top: 1.5em;
 }
+.header-static-mobile {
+		width: 110%;
+		border-top: 5px solid white;
+		position: fixed;
+		z-index: 9000010;
+		background-color: white;
+		background-repeat: repeat-x;
+		top: 0;
+		left: 0;
+		height: 3.7em;
+		
+	}
 .top-links {
 	background-color: #f6f6f6;
 	font-size: .8em;
@@ -2043,12 +2055,7 @@ footer p {
 }
 
 
-/* Eliminate nav-left */
-@media only screen and (max-width: 48em) {
-	#nav-left {
-		display: none;
-	}
-}
+
 
 
 
