@@ -183,21 +183,21 @@ header {
 	border-right: 1px solid #ccc;
 }
 
+#top-menu li:last-child a {
+	border: none;
+}
+
 .top-right #cart-topmenu {
 	display: inline-block;
 }
 
 .cart {	
 	background: url('../imgs/shopping-bag.png') no-repeat right center;
-	display: inline-block;
-	padding-right: 2em;
 	
 }
 
 #cart-topmenu a {
-	margin-right: 8px;
-	padding-right: 26px;
-	padding: 3px 20px;
+	padding: 0.5em 27px;
 
 }
 
@@ -225,14 +225,13 @@ header {
 }
 
 .search_width {
-	
+	margin-top: 2em;
 
 }
 
 #search-box {
 	font-size: 0.8em;
 	float: right;
-	width: 84%;
 	margin: 0.6em 0;
 	background-color: #f6f6f6;
 	border: 1px solid #ccc;
@@ -365,9 +364,6 @@ header {
 
 }
 
-#sema-inter img{
-	width:100%;
-}
 
 h1#heading-top{
 	display: block;
@@ -420,6 +416,7 @@ nav {
 nav ul {
 	font-family: sans-serif;
 	margin-bottom: .5em;
+	list-style: none;
 }
 
 nav h3 {
@@ -556,9 +553,8 @@ ul.size li {
 	font-size: .9em;
 	padding: .7em 1.8em .5em;
 	border: 1px solid black;
-	margin-top: -42px; 
-	margin-right: 1em;
-	float: right;
+	
+
 
 }
 
@@ -586,8 +582,7 @@ ul.size li {
 }
 
 .artwork {
-	float: left;
-	width: 33.3%;
+	;
 }
 
 .overlaybox {
@@ -596,7 +591,7 @@ ul.size li {
 	color: #fff;
 	pointer-events: none;
 	text-align: center;
-	margin-top: 52%;
+	
 	padding-top: 0.1em;
 }
 
@@ -625,11 +620,22 @@ ul.size li {
 	font-weight: bold;
 	text-transform: uppercase;
 }
+.center {
+	margin-top: 40%;
+	margin-bottom: auto;
+}
+.center-bottom {
+	margin-top: 13%;
+	margin-bottom: auto;
+	margin-right: auto;
+	margin-left: 30%;
+
+}
 
 .ver {
-	bottom: 0.8em !important;
+	
 	position: absolute;
-	margin-left: 79px;
+	
 }
 
 .ver a span {
@@ -791,9 +797,7 @@ form.sort label {
 
 .products {
 	list-style: none;
-	margin-top: 43px;
-	margin-right: -19px;
-	padding: 0;
+	
 
 }
 
@@ -804,6 +808,7 @@ form.sort label {
 .product .product-image {
 	box-sizing: border-box;
 	border: 1px solid #e6e6e6;
+	margin-top: 3%;
 	
 }
 
@@ -848,6 +853,10 @@ footer {
 	margin-top: 0;
 	color: #6d6d6d;
 	font-size: .8em;
+}
+
+.border-bottom {
+
 }
 
 .columns {
@@ -934,6 +943,15 @@ footer p {
 	margin: 0;
 	padding: 2em 0;
 }	
+
+@media only screen and (max-width: 48em) {
+	#nav-left {
+		display: none;
+	}
+}
+
+
+
 
 /*
 
