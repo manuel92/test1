@@ -73,24 +73,20 @@ header {
 	border: none;
 }
 
-#cart-position {
+.top-right #cart-topmenu {
 	display: inline-block;
-
 }
 
-#cart-position a {
-	padding: 3px 20px;
+
+.top-right #cart-position {
+	display: inline-block;
+	margin-left: .5em;
 }
 
 #cart-position a:hover {
 	text-decoration: underline;
 }
-.cart {
-	background: url('../imgs/shopping-bag.png') no-repeat right center;
-	padding: 0.5em 27px;
-}
 
-/*
 #cart-holder {
 	z-index: 100;
 	position: fixed;
@@ -118,7 +114,7 @@ header {
 	background: url('../imgs/shopping-bag.png') no-repeat right center;
 	padding-right: 2em;
 }
-*/
+
 
 #logo {
 	clear: left;
@@ -989,15 +985,6 @@ footer p {
 
 	}
 
-	#cart-position-mobile{
-		text-align:right;
-		float:right;
-		right:0;
-		position: fixed;
-		z-index:9000019;
-	}
-
-
 	.top-right #cart-position {
 		display: inline-block;
 		margin-left: .5em;
@@ -1205,20 +1192,11 @@ footer p {
 
 	}
 
-	#cart-position-mobile{
-		text-align:right;
-		float:right;
-		right:1.1em;
-		position: fixed;
-		z-index:9000019;
-		top:1em;
+	#cart-cap { 
+		width: 76px;
+		margin-left: -2em;
 	}
-
-
-	#cart-position {
-		display: none;
-	}
-
+	
 	#logo a {
 		background-position: 0 40px;
 		width: 197px;
@@ -1406,20 +1384,6 @@ footer p {
 
 	}	
 
-	#cart-position-mobile{
-		text-align:right;
-		float:right;
-		right:1.1em;
-		position: fixed;
-		z-index:9000019;
-		top:1em;
-	}
-
-
-	#cart-position {
-		display: none;
-	}
-
 	#logo a {
 		background-position: 0 40px;
 		width: 197px;
@@ -1603,19 +1567,6 @@ footer p {
 
 	}
 	
-	#cart-position-mobile{
-		text-align:right;
-		float:right;
-		right:1.1em;
-		position: fixed;
-		z-index:9000019;
-		top:1em;
-	}
-
-
-	#cart-position a {
-		margin:0.5em 27px;
-	}
 
 	#logo a {
 		background-position: 0 40px;
@@ -1657,10 +1608,6 @@ footer p {
 	}
 	div.column.c3 {
 		float: right;
-	}
-
-	#cart-position {
-		display: none;
 	}
 
 	/* End elemnts web */
