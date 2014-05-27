@@ -73,14 +73,13 @@ header {
 	border: none;
 }
 
-.top-right #cart-topmenu {
-	display: inline-block;
-}
-
-
 .top-right #cart-position {
 	display: inline-block;
-	margin-left: .5em;
+
+}
+
+#cart-position a {
+	padding: 3px 20px;
 }
 
 #cart-position a:hover {
@@ -108,7 +107,9 @@ header {
 	
 
 }
-
+.cart {
+	background: url('../imgs/shopping-bag.png') no-repeat right center;
+}
 #cart-holder #cart-link {
 	display: inline-block;
 	background: url('../imgs/shopping-bag.png') no-repeat right center;
@@ -1567,6 +1568,17 @@ footer p {
 
 	}
 	
+	#cart-position {
+		text-align:right;
+		float:right;
+		right:0;
+		position: fixed;
+		z-index:8888888;
+	}
+
+	#cart-position a {
+		padding: 3px 20px;
+	}
 
 	#logo a {
 		background-position: 0 40px;
