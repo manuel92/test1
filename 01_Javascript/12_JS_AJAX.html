@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+//AJAX
+//Asynchronous Javascript XML
+
+let xmlHttp = new XMLHttpRequest();
+
+function enviarPeticionSincrona(){
+
+    let parametros = "?nombre="+document.getElementById("nombre").value
+    //xmlHttp.open(metodo, url, sincrono/asincrono)
+    xmlHttp.open("GET","http://localhost:8080/Ej01_EjemploAjax/buscar"+parametros,false);
+    xmlHttp.send(null);
+
+    console.log("===================================================");
+    console.log(xmlHttp.responseText);
+    console.log(xmlHttp.status);
+    console.log(xmlHttp.statusText);
+
+    procesarRespuesta(xmlHttp.responseText);
+}
+
+function enviarPeticionAsincrona(){
+
+    let parametros = "?nombre="+document.getElementById("nombre").value
+
+    //0
+    //1
+    //2
+    //3
+    //4 Response complete
+    xmlHttp.onreadystatechange = function(){
+        console.log("RS:"+this.readyState);
+        if(this.readyState == 4){
+            procesarRespuesta(this.responseText);
+        }
+    }
+    xmlHttp.open("GET","http://localhost:8080/Ej01_EjemploAjax/buscar"+parametros,true);
+    xmlHttp.send(null);
+}
+
+function procesarRespuesta(respuesta){
+    document.getElementById("resultado").innerHTML = "<h2 align='center'>"+respuesta+"</h2>";
+}
+
+window.onload = function(){
+
+    //document.getElementById("btnBuscarS").onclick = function(){
+    //    enviarPeticionSincrona();
+    //}
+
+    document.getElementById("btnBuscarS").onclick = enviarPeticionSincrona;
+    document.getElementById("btnBuscarA").onclick = enviarPeticionAsincrona;
+
+}
+
+
+</script>
+
+<body>
+
+    <marquee>
+        <h1>
+            <font color="orange">
+                AJAX
+            </font>
+        </h1>
+    </marquee>
+
+    <p align="center">
+        Nombre
+        <input type="text" id="nombre"/>
+        <input type="button" id="btnBuscarS" value="Buscar Síncrono"/>        
+        <input type="button" id="btnBuscarA" value="Buscar Asíncrono"/>        
+    </p>
+
+    <div id="resultado"></div>
+
+</body>
+</html>

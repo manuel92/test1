@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+function DALE(){
+    alert("Botón DALE pulsado");
+}
+
+function validarFormulario(evento){
+
+    console.log("Evento:"+evento);
+
+    let dato = document.getElementById("dato").value;
+    if( dato.trim().length == 0){
+        alert("Dato es obligatorio");
+        //Detenemos el evento
+        evento.preventDefault();
+    }
+}
+
+window.onload = function(){
+
+    //Esto puede ser pero NO 
+    //document.getElementById("DALE").onclick = function(){
+    //    alert("Botón DALE pulsado");
+    //};
+
+    //Esto está bien
+    //document.getElementById("DALE").onclick = function(){
+    //    DALE();
+    //};
+
+    //Y esto tb
+    document.getElementById("DALE").onclick = DALE;
+
+    document.getElementById("Enviar").onclick = validarFormulario;
+
+}
+
+</script>
+
+<body>
+
+    <h1>JS.Eventos</h1>
+
+    <input type="button" id="DALE" value="DALE"/>
+
+    <hr/>
+
+    <form action="XXX">
+        <input type="text" id="dato" name="dato" value=""/>
+        <input type="submit" id="Enviar" value="Enviar"/>
+    </form>
+
+</body>
+</html>

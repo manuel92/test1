@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+    //Funcion que devuelva la suma de unos numeros que recibe por parámetro
+    //Función que de una lista de numeros devuelva el máximo
+    //Función que diga si un número es primo
+
+    let dato = 555;
+    console.log("Dato:"+dato);
+    console.log(`Ojo al dato: ${dato}`); //JS6
+
+    function sumar(){
+
+        if( arguments.length == 0){
+            return "Por favor introduce al menos un número o te mato.";
+        }
+
+        let total = 0;
+        for(let a=0; a<arguments.length; a++){
+            total = total+arguments[a];
+        }
+        return total;
+
+    }
+    console.log(sumar(10,20,30,40,50));
+
+    function maximo(){
+        let maximo = arguments[0];
+        for(let a=0; a<arguments.length; a++){
+            if( arguments[a] > maximo ){
+                maximo = arguments[a];
+            }
+        }
+        return maximo;
+    }
+    console.log(maximo(10,20,30,40,50));
+
+    function esPrimo(numero){
+        for(let a=2; a<numero-1; a++){
+            if( numero % a == 0 ){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(esPrimo(10));
+    console.log(esPrimo(17));
+    console.log(esPrimo(101));
+
+
+</script>
+
+<body>
+    
+</body>
+</html>

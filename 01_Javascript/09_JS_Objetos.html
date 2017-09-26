@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+//Las funciones son objetos
+//Una funcion tiene dos usos:
+//1-almacenarun código que queremos que se ejecute y reutilice
+//2-definir el prototipo de un objeto 
+
+//Definiendo un prototipo de objeto
+console.log("=======================================")
+function Cliente(){
+    //Añadimos propiedades al prototipo usando la palabra reservada 'this'
+    this.nombre    = undefined;
+    this.direccion = undefined;
+    this.telefono  = undefined;
+}
+
+//Diversión a tope:
+//let c1 = new Cliente(); //cliente
+//let c2 = Cliente();     //undefined
+//let c3 = Cliente;       //funcion
+//let c4 = new c3();      //cliente
+
+//Creamos las instancias invocando la funcion que define el prototipo
+//con 'new'
+let c1 = new Cliente();
+c1.nombre = "Bender";
+c1.direccion = "NNY";
+c1.telefono = 555;
+console.log(c1);
+console.log(c1.nombre);
+//console.log(c1["nombre"]); Idem
+
+//Creamos tantos objetos como necesitamos
+let c2 = new Cliente(); //C2 es un objeto nuevo.
+c2.nombre = "John McClane";
+
+//Añadiendo funciones con 'prototype'
+//-las funciones pueden declararse dentro de la función prototipo
+//-o a posteriori utilizando'prototype'
+Cliente.prototype.imprimirDatos = function(){
+        //Aqui this es la instancia de Cliente
+        console.log(this.nombre+","+this.direccion+","+this.telefono);
+    };
+
+c1.imprimirDatos(); //Ok
+c2.imprimirDatos(); //Fetén
+
+//Tambien podemos añadir un atributo o una función a un objeto concreto
+c1.hablar = function(){ 
+    console.log("Hola, soy "+this.nombre); //Aqui this es 'c1'
+};
+c1.hablar();
+
+//'Constructores'
+//Podemos aprovechar los parámetros que recibe la funcion prototipo
+//para inicializar el objeto a modo de cutreconstructor
+console.log("=======================================");
+function Libro(titulo, autor){
+    this.titulo = titulo;
+    this.autor  = autor;
+};
+let libro1 = new Libro("El quijote","Cervantes");
+let libro2 = new Libro();
+console.log(libro1);
+console.log(libro2);
+
+//Definiendo funciones dentro del prototipo
+function Coche(marca,modelo,matricula){
+    this.marca = marca;
+    this.modelo = modelo;
+    this.matricula = matricula;
+
+    //Esto sería una funcion 'publica'
+    this.toString = function(){
+        return `${this.marca}, ${this.modelo}, ${this.matricula}`;
+    }
+
+    //Esto sería una funcion 'privada'
+    function x(){
+        console.log("Función X");
+    }
+
+    this.funcionPublica = function(){
+        console.log("Función pública");
+        //Podemos llamara funciones 'privadas'
+        x();
+    }
+
+}
+
+console.log("=======================================");
+let coche1 = new Coche("SEAT","124 Sport","M-0000-AB");
+let coche2 = new Coche("Ford","Mustang","M-0000-AB");
+console.log(coche1.toString());
+//
+coche1.funcionPublica();
+//coche1.x(); ZASCA
+
+//Propiedades 'privadas'
+console.log("=======================================");
+function Disco(titulo,_grupo){
+    this.titulo = titulo; //'pública'
+    //Las propiedades 'privadas' se declaran sin el 'this'
+    let grupo = _grupo;
+
+    //Podemos añadir métodos accesores para las propiedades
+    //privadas (y tambien podemos tirarnos por un barranco)
+    //Tiene que ser con una función anidada
+    this.getGrupo = function(){
+        return grupo;
+    }
+}
+let disco = new Disco("DSOTM", "Pink Floyd");
+console.log(disco.titulo);
+//console.log(disco.grupo); //noooo
+console.log(disco.getGrupo());
+
+//Propiedades 'estáticas'
+console.log("=======================================");
+function Factura(){
+    if( typeof Factura.contador == 'undefined'){
+        Factura.contador = 0;
+    }
+    Factura.contador++;
+    this.total = 0;
+}
+let f1 = new Factura();
+let f2 = new Factura();
+let f3 = new Factura();
+let f4 = new Factura();
+//Para acceder a la propiedad 'estatica'
+console.log(Factura.contador)
+
+</script>
+
+<body>
+
+    <h1>JS. Objetos definidos con funciones</h1>
+
+</body>
+
+</html>

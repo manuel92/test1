@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+//Variables 'globales'
+
+//Un array para guardar las películas
+let peliculas = [];
+//La película seleccionada
+let peliculaSel;
+//Referencias a las cajas de texto (para no estar buscandolas todo el rato)
+let txtTitulo;
+let txtDirector; 
+let txtGenero;
+let txtYear;
+
+//PELICULA/////////////////////////////////////////
+function Pelicula(titulo, director, genero, year){
+    
+    if(typeof Pelicula.contador == 'undefined'){
+        Pelicula.contador =0;
+    }
+    Pelicula.contador++;
+
+    this.id = Pelicula.contador;
+    this.titulo = titulo;
+    this.director = director;
+    this.genero = genero;
+    this.year = year;
+}
+///////////////////////////////////////////////////
+peliculas.push(new Pelicula("T1","D1","G1",1111));
+peliculas.push(new Pelicula("T2","D2","G2",2222));
+peliculas.push(new Pelicula("T3","D3","G3",3333));
+peliculas.push(new Pelicula("T4","D4","G4",4444));
+///////////////////////////////////////////////////
+
+function rellenarTabla(){
+
+    let tabla =document.getElementById("tablaPeliculas");
+    tabla.innerHTML = "";
+
+    for(let a=0; a<peliculas.length; a++){
+
+        let pelicula = peliculas[a];
+
+        let tr = document.createElement("tr");
+        tr.setAttribute("id","p_"+pelicula.id); //<tr id="p_32">
+
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let txt1 = document.createTextNode(pelicula.id+"-"+pelicula.titulo);
+        let txt2 = document.createTextNode(pelicula.director);
+        let txt3 = document.createTextNode(pelicula.genero);
+        let txt4 = document.createTextNode(pelicula.year);
+
+        /*Esto está bien pero no funciona en navegadores antiguos
+        tr.onclick = function(){
+            alert(pelicula.id);
+        }
+        */
+
+        //<tr id="p_XXX">
+        tr.onclick = function(){
+            //'this' aquí es el tr
+            seleccionarPelicula(this.id.substring(2));
+        }
+
+        td1.appendChild(txt1);
+        td2.appendChild(txt2);
+        td3.appendChild(txt3);
+        td4.appendChild(txt4);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        tabla.appendChild(tr); 
+    }
+}
+
+function seleccionarPelicula(idPelicula){
+    for(let a=0; a<peliculas.length; a++){
+        let pelicula = peliculas[a];
+        if( pelicula.id == idPelicula){
+            txtTitulo.value   = pelicula.titulo;
+            txtDirector.value = pelicula.director;
+            txtGenero.value   = pelicula.genero;
+            txtYear.value     = pelicula.year;
+            peliculaSel = pelicula;
+            break;
+        }
+    }
+}
+
+function insertar(){
+    /*Lo mismo pero sin prototipo:
+    let pelicula = { 'titulo'   : txtTitulo.value,
+                     'director' : txtDirector.value,
+                     'genero'   : txtGenero.value,
+                     'year'     : txtYear.value };
+    peliculas.push(pelicula);
+    rellenarTabla();*/
+
+    if(!validarFormulario()){
+        return;
+    }
+
+    let pelicula = new Pelicula(txtTitulo.value, 
+                                txtDirector.value, 
+                                txtGenero.value, 
+                                txtYear.value);
+    peliculas.push(pelicula);
+    rellenarTabla();
+    vaciarFormulario();
+    
+}
+
+function validarFormulario(){
+    
+    document.getElementById("msjTitulo").innerHTML = "";
+    document.getElementById("msjDirector").innerHTML = "";
+    document.getElementById("msjGenero").innerHTML = "";
+    document.getElementById("msjYear").innerHTML = "";
+    
+    let ok = true; 
+
+    if( txtTitulo.value.trim().length == 0){
+        document.getElementById("msjTitulo").innerHTML = "Campo obligatorio";
+        ok = false;
+    }
+
+    if( txtDirector.value.trim().length == 0){
+        document.getElementById("msjDirector").innerHTML = "Campo obligatorio";
+        ok = false;
+    }
+
+    if( txtGenero.value.trim().length == 0){
+        document.getElementById("msjGenero").innerHTML = "Campo obligatorio";
+        ok = false;
+    }
+
+    if( txtYear.value.trim().length == 0){
+        document.getElementById("msjYear").innerHTML = "Campo obligatorio";
+        ok = false;
+    }
+
+    return ok;
+}
+
+function modificar(){
+
+    if(peliculaSel == undefined){
+        alert("Seleccione una película");
+        return;
+    }
+    if(!validarFormulario()){
+        return;
+    }
+
+    peliculaSel.titulo = txtTitulo.value;
+    peliculaSel.director = txtDirector.value;
+    peliculaSel.genero = txtGenero.value;
+    peliculaSel.year = txtYear.value;
+
+    rellenarTabla();
+
+}
+
+function borrar(){
+    if(peliculaSel == undefined){
+        alert("Seleccione una película");
+        return;
+    }
+
+    for(var a=0; a<peliculas.length; a++){
+        if(peliculas[a].id == peliculaSel.id){
+            break
+        }
+    }
+    for(var b=a; b<peliculas.length-1; b++){
+        peliculas[b] = peliculas[b+1];
+    }
+    peliculas.pop();    
+
+    //No olvidemos que tenemos una funcion para eliminar
+    //elementos de un array:
+    //peliculas.splice(a,1);
+
+    rellenarTabla();
+    vaciarFormulario();
+}
+
+function vaciarFormulario(){
+    txtTitulo.value="";
+    txtDirector.value="";
+    txtGenero.value="";
+    txtYear.value="";
+
+    peliculaSel = undefined;
+}
+
+window.onload = function(){
+    document.getElementById("btnInsertar").onclick = insertar;
+    document.getElementById("btnModificar").onclick = modificar;
+    document.getElementById("btnBorrar").onclick = borrar;
+    document.getElementById("btnVaciar").onclick = vaciarFormulario;
+
+    txtTitulo = document.getElementById("titulo");
+    txtDirector = document.getElementById("director");
+    txtGenero = document.getElementById("genero");
+    txtYear = document.getElementById("year");
+
+    rellenarTabla();
+}
+
+</script>
+
+<body>
+
+    <h1 align="center">
+        <font color="lightGreen">
+            Gestión de Películas        
+        </font>
+    </h1>
+
+    <p align="center">
+        <input type="button" id="btnInsertar"  value="Insertar"/>
+        <input type="button" id="btnModificar" value="Modificar"/>
+        <input type="button" id="btnBorrar"    value="Borrar"/>
+        <input type="button" id="btnVaciar"    value="vaciarFormulario"/>
+    </p>
+
+    <table align="center">
+        <tr>
+            <td>Título</td>
+            <td>
+                <input type="text" id="titulo"/>
+            </td>
+            <td id="msjTitulo"></td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>
+                <input type="text" id="director"/>
+            </td>
+            <td id="msjDirector"></td>
+        </tr>
+        <tr>
+            <td>Género</td>
+            <td>
+                <input type="text" id="genero"/>
+            </td>
+            <td id="msjGenero"></td>            
+        </tr>
+        <tr>
+            <td>Año</td>
+            <td>
+                <input type="text" id="year"/>
+            </td>
+            <td id="msjYear"></td>
+        </tr>
+    </table>
+
+    <p/>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Director</th>
+                <th>Género</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody id="tablaPeliculas">
+        </tbody>
+    </table>
+
+</body>
+</html>

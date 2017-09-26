@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+function documentWrite(){
+    //document.write es una finísima herramienta de relojero para
+    //modificar la página a nivel subatómico
+    document.write("<h1>Hola</h1>");
+    document.write("<h1>que</h1>");
+    document.write("<h1>tal</h1>");
+}
+
+function _innerHTML(){
+    let div = document.getElementById("div1");
+    div.innerHTML = "<h2 align='center'>Contenido generado con innerHTML</h2>";
+}
+
+function vaciarConInnerHTML(){
+    document.getElementById("div1").innerHTML = "";
+}
+
+function listarPeliculas(){
+
+    let peliculas = [
+        { 'titulo' :   'T1',
+          'director' : 'D1',
+          'genero'   : 'G1' },
+        { 'titulo' :   'T2',
+          'director' : 'D2',
+          'genero'   : 'G2' },
+        { 'titulo' :   'T3',
+          'director' : 'D3',
+          'genero'   : 'G3' },
+        { 'titulo' :   'T4',
+          'director' : 'D4',
+          'genero'   : 'G4' },
+        { 'titulo' :   'T5',
+          'director' : 'D5',
+          'genero'   : 'G5' },
+    ];
+
+    return peliculas;
+
+}
+
+function crearNodos(){
+
+    document.getElementById("div2").innerHTML = "";
+
+    let peliculas = listarPeliculas();
+
+    let tabla = document.createElement("table");
+    //Atributos. Método grán fajador
+    let atr = document.createAttribute("border");
+    atr.value = 1;
+    tabla.setAttributeNode(atr);
+    //Método fino estilista
+    tabla.setAttribute("align","center");
+
+    for(a=0; a<peliculas.length; a++){
+        let pelicula = peliculas[a];
+
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+
+        let txt1 = document.createTextNode(pelicula.titulo);
+        let txt2 = document.createTextNode(pelicula.director);
+        let txt3 = document.createTextNode(pelicula.genero);
+
+        td1.appendChild(txt1);
+        td2.appendChild(txt2);
+        td3.appendChild(txt3);
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        tabla.appendChild(tr);
+
+    }
+
+    document.getElementById("div2").appendChild(tabla);
+
+}
+
+function crearNodos2(){
+
+    let peliculas = listarPeliculas();
+
+    let html = "<table border='1' align='center'>"+
+                    "<tr>"+
+                        "<th>Título</th>"+
+                        "<th>Director</th>"+
+                        "<th>Género</th>"+
+                    "</tr>";
+    for(let a=0; a<peliculas.length; a++){
+        let pelicula = peliculas[a];
+        html = html +
+                "<tr>"+
+                    "<td>"+pelicula.titulo+"</td>"+
+                    "<td>"+pelicula.director+"</td>"+
+                    "<td>"+pelicula.genero+"</td>"+
+                "</tr>";
+    }
+    html = html + "</table>";
+
+    document.getElementById("div2").innerHTML = html;
+
+}
+
+function vaciarSelect(){
+
+    let select = document.getElementById("ciudades");
+
+    //Esto funciona sin ningun problema:
+    //select.innerHTML = "";
+
+    //Podemos pedirle a un nodo que elimine a uno de sus hijos
+    //nodo.removeChild(nodo_hijo);
+
+    //Si no sabemos cual es el nodo padre
+    //nodo_a_borrar.parentNode
+
+    //Y siempre podemos hacer esto:
+    //nodo.remove();
+
+    let opciones = select.childNodes;
+    let tam = opciones.length;
+    for(let a=0; a<tam; a++){
+        let opcion = opciones[0];
+        select.removeChild(opcion);
+    }
+
+}
+
+</script>
+
+<body>
+    <marquee>
+        <h1>
+            <font color="lightGreen">
+                DHTML
+            </font>
+        </h1>
+    </marquee>     
+    
+    <hr/>
+    
+    <p align="center">
+        <input type="button" value="Document.write"   onclick="documentWrite()"/>
+        <input type="button" value="innerHTML"        onclick="_innerHTML()"/>
+        <input type="button" value="Vaciar innerHTML" onclick="vaciarConInnerHTML()"/>
+        <input type="button" value="Crear nodos"      onclick="crearNodos()"/>
+        <input type="button" value="Crear nodos 2"    onclick="crearNodos2()"/>
+        <input type="button" value="Vaciar select"    onclick="vaciarSelect()"/>
+    </p>
+    
+    <hr/>
+    
+    <div id="div1"></div>
+    
+    <hr/>
+    
+    <div id="div2"></div>
+    
+    <hr/>
+    
+    <p align="center">
+        <select id="ciudades">
+            <option value="Getafe">Getafe</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Salamanca">Salamanca</option>
+            <option value="Santa Pola">Santa Pola</option>
+            <option value="Chinchón">Chinchón</option>
+        </select>
+    </p>
+
+</body>
+</html>
+
