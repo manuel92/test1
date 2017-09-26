@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+xmlHttp = new XMLHttpRequest();
+
+//url
+//metodo
+//parametros
+//body
+//content type / headers
+//sincrono/asincrono
+//funcion success
+//funcion error
+function enviarPeticionAjax( opciones ){
+
+    let metodo = 'GET';
+    if( opciones.metodo ){
+        metodo = opciones.metodo;
+    }
+
+    let parametros = "";
+    if( opciones.parametros ){
+        parametros = opciones.parametros;
+    }
+
+    let asincrono = true;
+
+    xmlHttp.onreadystatechange = function(){
+        if(this.readyState == 4){
+            opciones.success(this.responseText);
+        }
+    }
+
+    xmlHttp.open(metodo,opciones.url+"?"+parametros, asincrono);
+    xmlHttp.send(null);
+}
+
+function rellenarTablaUsuarios(usuariosJSON){
+    //función eval: NO USAR
+    //let txt = "alert('No hay que usar la funcion eval');";
+    //eval(txt);
+    //Podríamos hacerlo así pero NO:
+    //let usuarios = eval(usuariosJSON);
+    //console.log(usuarios);
+
+    //Hay que usar el objeto JSON
+    //obj  = JSON.parse(json);
+    //json = JSON.stringify(obj);
+
+    let usuarios = JSON.parse(usuariosJSON);
+
+    let tabla = document.getElementById("tablaUsuarios");
+    tabla.innerHTML = "";
+    for(let a=0; a<usuarios.length; a++){
+        let usuario = usuarios[a];
+        let tr = "<tr onclick='seleccionarUsuario("+usuario.id+")'>"+
+                    "<td>"+usuario.nombre+"</td>"+
+                    "<td>"+usuario.login+"</td>"+
+                    "<td>"+usuario.password+"</td>"+
+                 "</tr>";
+        tabla.innerHTML = tabla.innerHTML+tr;
+    }
+}
+
+function seleccionarUsuario(id){
+    enviarPeticionAjax( 
+        { 'url' : 'http://localhost:8080/CasoPractico_REST/servicios/usuarios/'+id,
+          'success' : rellenarFormulario } );
+}
+
+function rellenarFormulario(usuarioJSON){
+    let usuario = JSON.parse(usuarioJSON);
+    document.getElementById("nombre").value   = usuario.nombre;
+    document.getElementById("login").value    = usuario.login;
+    document.getElementById("password").value = usuario.password;
+}
+
+function insertarUsuario(){
+
+    xmlHttp.open("POST","http://localhost:8080/CasoPractico_REST/servicios/usuarios", true);
+    xmlHttp.onreadystatechange = function(){
+        if(this.readyState == 4){
+            console.log("insertarUsuario:"+this.status);
+
+            enviarPeticionAjax( { 'url'     : 'http://localhost:8080/CasoPractico_REST/servicios/usuarios',
+                                  'success' :  rellenarTablaUsuarios  } );
+        }
+    }
+
+    //cabecera
+    xmlHttp.setRequestHeader("content-type","application/json");
+
+    let nombre   = document.getElementById("nombre").value;
+    let login    = document.getElementById("login").value;
+    let password = document.getElementById("password").value;
+    //Manera rupestre:
+    let json = "{'nombre':'"+nombre+"','login':'"+login+"','password':'"+password+"'}";
+
+    //Manera menos rupestre
+    let usuario = { 'nombre'   : nombre,
+                    'login'    : login,
+                    'password' : password };
+    xmlHttp.send(JSON.stringify(usuario));
+
+}
+
+window.onload = function(){
+
+    document.getElementById("btnInsertar").onclick = insertarUsuario;
+
+    enviarPeticionAjax( { 'url'     : 'http://localhost:8080/CasoPractico_REST/servicios/usuarios',
+                          'success' :  rellenarTablaUsuarios  } );
+
+}
+
+</script>
+
+
+<body>
+
+    <h1 align="center">
+        <font color="lightGreen">
+            Gestión de Usuarios   
+        </font>
+    </h1>
+
+    <p align="center">
+        <input type="button" id="btnInsertar"  value="Insertar"/>
+        <input type="button" id="btnModificar" value="Modificar"/>
+        <input type="button" id="btnBorrar"    value="Borrar"/>
+        <input type="button" id="btnVaciar"    value="Vaciar"/>
+    </p>
+
+    <table align="center">
+        <tr>
+            <td>Nombre</td>
+            <td>
+                <input type="text" id="nombre"/>
+            </td>
+            <td id="msjNombre"></td>
+        </tr>
+        <tr>
+            <td>Login</td>
+            <td>
+                <input type="text" id="login"/>
+            </td>
+            <td id="msjLogin"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="text" id="password"/>
+            </td>
+            <td id="msjPassword"></td>            
+        </tr>
+    </table>
+
+    <p/>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Login</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="tablaUsuarios">
+        </tbody>
+    </table>
+    
+
+</body>
+</html>
