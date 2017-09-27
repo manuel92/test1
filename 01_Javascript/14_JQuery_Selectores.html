@@ -113,6 +113,45 @@ function pruebas(){
     ///////////////////////////
     //Concatenando selectores//
     ///////////////////////////
+    
+    //Si separamos los selectores con comas se suman 
+    //Los nodos que sean type=text + los nodos que sean <th>
+    $("[type=text], th").css("background-color","yellow");
+
+    //Si colocamos juntos los selectores se suman pero se buscan
+    //en el mismo nodo
+    //Los nodos que sean input Y type=button a la vez
+    $("input[type=button]").css("background-color","#FABADA")
+
+    //Nodos hijos, nietos, biznietos, tataranietos...
+    //Si se separan los selectores con un espacio al resultado
+    //del primer selector se aplica el segundo
+    $("#div3 input").css("border","3px solid blue");
+
+    //Nodos hijos directos
+    $("#div3 > input").css("border","3px solid red");
+
+    //////////////////////////////
+    //Búsqueda en nodos de texto//
+    //////////////////////////////
+    $("h1:contains('JQuery')").html("JQUERY GRÁN RESERVA");
+
+
+    //Trabajando con los índices del array de nodos contenido en
+    //el objeto jQuery que devuelve un selector
+    $("table")[3];     //La cuarta tabla (pero elarray contiene TODAS las tablas)
+    $("table").get(3); //idem
+    //
+    $("#tabla tr:even").css("background-color","MEDIUMVIOLETRED");
+    $("#tabla tr:odd").css("background-color","#C0C1D0");
+    $("#tabla tr:eq(4)").css("background-color","blue");
+    $("#tabla tr:lt(2)").css("background-color","green");
+    $("#tabla tr:gt(8)").css("background-color","red");
+
+    //nodos de tipo input que estén desabilitados
+    $("input:disabled");
+    //nodos que no tengan hijos
+    $("div:empty");
 
 }
 
@@ -216,7 +255,7 @@ function prueba(){
         </div>
     
         <hr/>
-    
+     
         <div id="div3">
             <input type="text" id="txt9"/>
             <input type="text" id="txt10" movida="movida"/>
@@ -229,13 +268,13 @@ function prueba(){
         <hr>
     
         <div id="5">
-            <table border="1" width="400px">
+            <table border="1" width="400px" id="tabla">
                 <tr>
                     <th>A</th>
                     <th>B</th>
                     <th>C</th>
                 </tr>
-                <tbody id="tabla">
+                <tbody>
                     <tr>
                         <td>1</td>
                         <td>2</td>
