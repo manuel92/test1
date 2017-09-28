@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
 
@@ -12,92 +13,75 @@ $(pruebas);
 
 function pruebas(){
 
-    //SPAN 1
-    console.log("==========================================");
-    //Si a la funcion $ lepasamos un string con html se crean los nodos
-    //y nos devuelven un objeto jQuery que los contiene
-    let nodos = $("<table><tr><td>HOLA</td></tr></table>"); //Se crean cuatro nodos
-    console.log(nodos); //Pero en el array solo está el nodo raíz
+    //Si a la funcion $ le pasamos un String con Html se crean los nodos 
+    //y nos devuelven un objeto JQuery que los contiene
+    console.log("============================");
+    let nodos = $("<table><tr><td>Hola</td></tr></table>");
+    console.log(nodos); //Pero en el array solo esta el nodo raíz
+    nodos = $("<table><tr><td>Hola</td></tr></table><h2>Movida gordisima</h2>");
+    console.log(nodos);//Se crean 6 nodos pero en el array hay dos: table y h2
     
-    nodos = $("<table><tr><td>HOLA</td></tr></table><h2>Movida gordísima</h2>"); //Se crean 6 nodos
-    console.log(nodos); //Pero en el array hay dos: table y h2
-    let span = $("#span1")[0]; 
+    let span = $("#span1")[0]; //JQuery encuentra el nodo en el arbol del DOM, cuidado que 'span' es un objeto jquery
     span.appendChild(nodos[0]);
     span.appendChild(nodos[1]);
-
-    //SPAN 2
-    console.log("==========================================");
+    
+    console.log("============================");
+    //
     $("#span2").html("Mi mente se va");
     let span2 = $("#span2").get(0);
     //span.html("ESTO ES UN ZASCA DE LOS GRANDES");
-    span2.innerHTML = "ASI SI"
-
-    //SPAN 3
-    console.log("==========================================");
-    //let span3 = $("#span3").get(0);
+    span2.innerHTML = "Asi si";
+    console.log("============================");
+    
+    let span3 = $("#span3").get(0);
     //$("<h3>UNO</h3><h3>DOS</h3><h3>TRES</h3>").appendTo(span3);
-    //Mas corto:    
+    
     $("<h3>UNO</h3><h3>DOS</h3><h3>TRES</h3>").appendTo($("#span3"));
-
+    
     //Nodos de texto
-    //La función text afecta únicamente a nodos de texto
-    console.log("==========================================");
-    console.log($("#div2").text()); //Sin parámetro obtenemos el valor
-    //Con parámetro cambiamos el valor del nodo de texto
-    $("#div2").text("A tope con el JQuery");
-    $("#div2").text("<b>A tope con el JQuery</b>");
-
+    //Cada funcion text afecta documentos a nodos de texto
+    console.log("============================");
+    console.log($("#div2").text()); //Sin parametro obtenemos el valor
+    //Con parametro cambiamos el valor del nodo de texto
+    $("#div2").text("a tope con el JQuery");
+    //$("#div2").text("<b>a tope con el JQuery</b>");
+    
     //innerHTML
-    console.log("==========================================");
-    $("#div3").html("<h3><font color='lightgreen'>A disfrutar con el Javascript</font></h3>");
-    console.log( $("#div4").html() );
+    $("#div3").html("<h3><font color='red'>A disfrutar con el Javascript</h3>");
+        //console.log($["#div3"].html());
+        
 
+    console.log("============================");
     //Trabajando con nodos
-    //appendTo
+    //appenTo
     let nodo2 = $("#div5")[0];
-    $("<b>Super diversión a tope</b>").appendTo(nodo2); //ok
-    $("<b>Super diversión a tope</b>").appendTo($("#div5")[0]); //escribiendo menos
-    $("<b>Super diversión a tope</b>").appendTo($("#div5")); //escribiendo aun menos pero cuidado!
+    $("<p>Super diversion a tope</p>").appendTo(nodo2);
+    $("<p>Super diversion a tope</p>").appendTo($("#div5"))[0];
+    $("<p>Super diversion a tope</p>").appendTo($("#div5"));
 
-    //append: añade al final, como último hijo
-    $("#lista").append("<li>y no le encuentro las piernas</li>");
-    $("#lista").append("<li>aaaaaaaaaaaaaaaa</li>");
-    //prepend: añade como primer hijo
-    $("#lista").prepend("<li>bbbbbbbbbbbbbbbbb</li>");
+    console.log("============================");
+    //append añade al final
+    $("#lista").append("<li>y no le encuentro las pirenas</li>");
+    //añadir entre x elementos
+    $("#lista").append("<li id='separador'>=================</li>");
+    $("#lista").append("<li>aaaaaaaaaaaaaaaaaaaaa</li>");
+    //prepend añade como primer hijo
+    $("#lista").prepend("<li>bbbbbbbbbbbbbbbbbbbb</li>");
+    
+    //Busca el hijo padre y lo añade antes 'before' o después 'after'
+    $("#separador").before("<li>before</li>");
+    $("#separador").after("<li>after</li>");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    console.log("============================");
+    //Eliminando nodos
+    //document.getElementsById("texto").remove(); //Dry Stick Javascript '.remove()'
+    $("#texto").remove(); //Way JQuery 'remove()'
 
 
 }
 
-
 </script>
-
-<body>
-
+<body>            
 <h1>JQuery DHtml</h1>
 
     <div id="div1">
@@ -142,6 +126,5 @@ function pruebas(){
     <div id="div8">
         <b id="texto">ABCDEFG</b>        
     </div>
-    
 </body>
 </html>
