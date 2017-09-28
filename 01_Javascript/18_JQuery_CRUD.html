@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+//Variables 'globales'
+
+//Un array para guardar las películas
+let peliculas = [];
+//La película seleccionada
+let peliculaSel;
+
+//PELICULA/////////////////////////////////////////
+function Pelicula(titulo, director, genero, year){
+    
+    if(typeof Pelicula.contador == 'undefined'){
+        Pelicula.contador =0;
+    }
+    Pelicula.contador++;
+
+    this.id = Pelicula.contador;
+    this.titulo = titulo;
+    this.director = director;
+    this.genero = genero;
+    this.year = year;
+}
+///////////////////////////////////////////////////
+peliculas.push(new Pelicula("T1","D1","G1",1111));
+peliculas.push(new Pelicula("T2","D2","G2",2222));
+peliculas.push(new Pelicula("T3","D3","G3",3333));
+peliculas.push(new Pelicula("T4","D4","G4",4444));
+///////////////////////////////////////////////////
+
+function rellenarTabla(){
+
+    $("#tablaPeliculas").html("");
+
+    for(let a=0; a<peliculas.length; a++){
+        let pelicula = peliculas[a];
+        $("#tablaPeliculas").append(
+            "<tr onclick='seleccionarPelicula("+pelicula.id+")'>"+
+                "<td>"+pelicula.titulo+"</td>"+
+                "<td>"+pelicula.director+"</td>"+
+                "<td>"+pelicula.genero+"</td>"+
+                "<td>"+pelicula.year+"</td>"+
+            "</tr>"
+        );
+    }
+    
+}
+
+function seleccionarPelicula(idPelicula){
+    for(let a=0; a<peliculas.length; a++){
+        let pelicula = peliculas[a];
+        if( pelicula.id == idPelicula){
+            $("#titulo").val(pelicula.titulo);
+            $("#director").val(pelicula.director);
+            $("#genero").val(pelicula.genero);
+            $("#year").val(pelicula.year);
+            peliculaSel = pelicula;
+            break;
+        }
+    }
+}
+
+function insertar(){
+
+    if(!validarFormulario()){
+        return;
+    }
+
+    let pelicula = new Pelicula($("#titulo").val(), 
+                                $("#director").val(), 
+                                $("#genero").val(), 
+                                $("#year").val());
+    peliculas.push(pelicula);
+    rellenarTabla();
+    vaciarFormulario();
+    
+}
+
+function validarFormulario(){
+    
+    $("[id^=msj-]").html("");
+    
+    let ok = true; 
+    $("#formulario [type=text]").each(
+        function(){
+            if(this.value.trim() == ""){
+                $("#msj-"+this.id).text("Campo obligatorio");
+                ok = false;
+            }
+        }
+    );
+    return ok;
+}
+
+function modificar(){
+
+    if(peliculaSel == undefined){
+        alert("Seleccione una película");
+        return;
+    }
+    if(!validarFormulario()){
+        return;
+    }
+
+    $("#formulario [type=text]").each(
+        function(){
+            peliculaSel[this.id] = this.value;
+        }
+    );
+
+    rellenarTabla();
+}
+
+function borrar(){
+    if(peliculaSel == undefined){
+        alert("Seleccione una película");
+        return;
+    }
+
+    for(var a=0; a<peliculas.length; a++){
+        if(peliculas[a].id == peliculaSel.id){
+            break
+        }
+    }
+    for(var b=a; b<peliculas.length-1; b++){
+        peliculas[b] = peliculas[b+1];
+    }
+    peliculas.pop();    
+
+    //No olvidemos que tenemos una funcion para eliminar
+    //elementos de un array:
+    //peliculas.splice(a,1);
+
+    rellenarTabla();
+    vaciarFormulario();
+}
+
+function vaciarFormulario(){
+    $("#formulario [type=text]").val("");
+    peliculaSel = undefined;
+}
+
+$(inicializar);
+
+function inicializar(){
+    $("#btnInsertar").click(insertar);
+    $("#btnModificar").click(modificar);
+    $("#btnBorrar").click(borrar);
+    $("#btnVaciar").click(vaciarFormulario);
+
+    rellenarTabla();
+}
+
+</script>
+
+<body>
+
+    <h1 align="center">
+        <font color="lightGreen">
+            Gestión de Películas        
+        </font>
+    </h1>
+
+    <p align="center">
+        <input type="button" id="btnInsertar"  value="Insertar"/>
+        <input type="button" id="btnModificar" value="Modificar"/>
+        <input type="button" id="btnBorrar"    value="Borrar"/>
+        <input type="button" id="btnVaciar"    value="vaciarFormulario"/>
+    </p>
+
+    <table id="formulario" align="center">
+        <tr>
+            <td>Título</td>
+            <td>
+                <input type="text" id="titulo"/>
+            </td>
+            <td id="msj-titulo"></td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>
+                <input type="text" id="director"/>
+            </td>
+            <td id="msj-director"></td>
+        </tr>
+        <tr>
+            <td>Género</td>
+            <td>
+                <input type="text" id="genero"/>
+            </td>
+            <td id="msj-genero"></td>            
+        </tr>
+        <tr>
+            <td>Año</td>
+            <td>
+                <input type="text" id="year"/>
+            </td>
+            <td id="msj-year"></td>
+        </tr>
+    </table>
+
+    <p/>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Director</th>
+                <th>Género</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody id="tablaPeliculas">
+        </tbody>
+    </table>
+
+</body>
+</html>
