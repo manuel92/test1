@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+function solicitarSugerencias(campo){
+    let parametros = "?campo="+campo+"&valor="+$("#"+campo).val();
+    console.log("1:"+parametros);
+}
+
+function solicitarSugerenciasBis(evento){    
+    let parametros = "?campo="+evento.target.id+
+                     "&valor="+$("#"+evento.target.id).val();
+    console.log("2:"+parametros);    
+}
+
+function solicitarSugerenciasBisBis(){    
+    let parametros = "?campo="+this.id+
+                     "&valor="+this.value;
+    console.log("3:"+parametros);    
+}
+
+
+$(inicializar);
+
+function inicializar(){
+
+    //Esto está mal puesto que se invoca 'solicitarSugerencias' en el onload:
+    //$("#ciudad").keyup( solicitarSugerencias("ciudad") );
+
+    //Este es el más flexible 
+    $("#ciudad").keyup( function(){
+        solicitarSugerencias("ciudad");} 
+    );
+
+    //Con el evento
+    $("#ciudad").keyup( solicitarSugerenciasBis );
+
+    //Con 'this'
+    //document.getElementById("ciudad").onkeyup = solicitarSugerenciasBisBis;
+    $("#ciudad").keyup( solicitarSugerenciasBisBis );
+
+}
+
+</script>
+
+<body>
+
+    <h1>Campo suggest</h1>
+
+    Ciudad:
+    <input type="text" id="ciudad"/>
+    <div id="sug_ciudad"></div>
+    
+</body>
+</html>

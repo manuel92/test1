@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+//Variables globales
+let timerId = null;
+let numSug = 0; 
+let sugSel = -1; //Diversión con los índices
+
+function leerTeclado(campo, evento){
+
+    let keyCode = evento.keyCode;
+    console.log(keyCode);
+
+    switch(keyCode){
+        case 38 : //Parriba
+                  $("#"+campo+"_"+sugSel).css('background-color', 'white');
+                  if(sugSel > 0){
+                    sugSel--;
+                  }
+                  $("#"+campo+"_"+sugSel).css('background-color', 'yellow');
+                  break;
+        case 40 : //Pabajo               
+                  $("#"+campo+"_"+sugSel).css('background-color', 'white');
+                  if( sugSel < numSug-1 ){
+                    sugSel++;
+                  }
+                  $("#"+campo+"_"+sugSel).css('background-color', 'yellow');
+                  break;
+        case 13 : //Padentro
+                  $("#"+campo).val( $("#"+campo+"_"+sugSel).text() );
+                  vaciarSugerencias(campo);
+                  break;
+        default : programarTemporizador(campo);
+                  break; 
+    }
+}
+
+function programarTemporizador(campo){
+
+    if(timerId != null){
+        clearTimeout(timerId);
+    }
+
+    timerId = setTimeout( function(){
+        solicitarSugerencias(campo);
+    }, 500);
+
+}
+
+function solicitarSugerencias(campo){
+
+    let parametros = "?campo="+campo+"&valor="+$("#"+campo).val();
+    console.log("1:"+parametros);
+
+    $.ajax( { 'url'     : 'http://localhost:8080/REST_Nuevo/servicios/autocompletar'+parametros,
+              'success' : rellenarSugerencias,
+              'error'   : procesarError });
+}
+
+function rellenarSugerencias(respuesta){
+
+    let valores = respuesta.split("|");
+    let campo = valores.shift(); //El primero de los valores es el campo que hay que autocompletar
+    
+    /* No vamos a andar buscando lo mismo cuatrocientas veces...
+    $("#sug_"+campo).html('');
+    for(let a=0; a<valores.length; a++){
+        $("#sug_"+campo).append(valores[a]+"<br/>");
+    }
+    */
+
+    numSug = valores.length; //Las numeramos de 0 a n
+    sugSel = -1
+
+    //let div = $("#sug_"+campo)[0]; //Le nodo
+    let div = $("#sug_"+campo);      //El objeto jquery
+    div.html("");
+    for(let a=0; a<valores.length; a++){
+        let id = campo+"_"+a;
+
+        let sug = $("<div id='"+id+"'>"+valores[a]+"<div/>");
+        sug.mouseover(function(){
+            this.style.backgroundColor = "lightGreen";
+            sugSel = a; 
+        });
+        sug.mouseout(function(){
+            $("#"+campo+"_"+sugSel).css("background-color","white");
+            //this.style.backgroundColor = "white";
+        });
+        sug.click(function(){
+            $("#"+campo).val( this.innerHTML );
+            vaciarSugerencias(campo);
+        })
+
+        div.append(sug);
+    }
+}
+
+function vaciarSugerencias(campo){
+    $("#sug_"+campo).html("");
+    sugSel = -1;
+    numSug = 0;
+}
+
+function procesarError(error){
+    console.log(error);
+}
+
+$(inicializar);
+
+function inicializar(){
+
+    $("#ciudad").keyup( function(evento){
+        leerTeclado("ciudad",evento);} 
+    );
+
+}
+
+</script>
+
+<body>
+
+    <h1>Campo suggest</h1>
+
+    Ciudad:
+    <input type="text" id="ciudad"/>
+    <div id="sug_ciudad"></div>
+
+</body>
+</html>
+
+
+

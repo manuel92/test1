@@ -1,0 +1,128 @@
+
+/*Selector universa*/
+* {
+    color: blue;
+}
+
+/*Selector de etiqueta*/
+h1 {
+    color: lightgreen;
+}
+
+h5{
+    color: lightgrey;
+}
+
+/*Selector de identificador*/
+#cabecera {
+    height: 75px;
+    background-color: yellow;
+}
+
+/*selector de clase*/
+.botonera {
+    background-color: #DDDDDD;
+}
+
+/*Agrupando selectores*/
+.botonera, table, .formulario {
+    width: 500px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Selector de hijos*/
+/*Descendientes*/
+div label {
+    color: fuchsia;
+}
+
+/*
+div > label : descendiente inmediato, hijo
+input + label : adyacente (hermano justo antes o despues)
+input ~ label : adyacente
+*/
+
+/*Selector de atributos*/
+[obligatorio] {
+    color: navajowhite;
+    border-color: orange;
+}
+
+/*pseudoclases*/
+/*
+:visited
+:hover
+:focus
+:link
+:disabled
+:selected
+:read-only
+*/
+
+a {
+    color: purple;
+    text-decoration: none;
+}
+
+a:visited {
+    color: yellowgreen;
+}
+
+a:hover {
+    color: burlywood;
+}
+
+/***************/
+.formulario label {
+    width: 125px;
+    background-color: khaki;
+    display: block;
+    float: left;
+}
+
+/*Maquetación con css*/
+/*Por necesidades del guión repetimos la cabecera*/
+
+#contenedor {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cabecera {
+    height: 75px;
+    background-color: yellow;
+    width: 100%;
+}
+
+#menu {
+    width: 175px;
+    background-color: coral;
+    height: 400px;
+    float: left;
+}
+
+#contenido {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+#pie {
+    clear: both;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
