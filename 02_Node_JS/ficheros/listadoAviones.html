@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     
+</head>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+function seleccionarAvion(id){
+
+    window.location.href = "formularioAviones.html?id"
+
+
+    verFormulario();
+}
+
+function listarAviones(){
+
+    $.ajax( { 'url'     : 'aviones',
+              'success' : rellenarTablaAviones, 
+              'error'   : procesarError });
+}
+
+function procesarError(error){
+    console.log(error);
+}
+
+function rellenarTablaAviones(aviones){
+
+    let tabla = $("#tablaAviones"); 
+    tabla.html("");
+    for(let a=0; a<aviones.length; a++){
+        let avion = aviones[a];
+        tabla.append(
+            "<tr onclick='seleccionarAvion("+avion.id+")'>"+
+                "<td>"+avion.fabricante+"</td>"+
+                "<td>"+avion.modelo+"</td>"+
+                "<td>"+avion.year+"</td>"+
+             "</tr>");
+    }
+
+}
+
+function verFormulario(){
+    window.location.href = 'formularioAviones.html';
+}
+
+$(inicializar);
+
+function inicializar(){
+
+    $("#btnNuevo").click(verFormulario);
+    listarAviones();
+
+}
+
+</script>
+
+
+<body>
+
+    <div class="text-center page-header">
+        <h1>
+            GestFlot 3000 
+        </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-0 col-sm-2"></div>
+        <div class="col-xs-12 col-sm-8">
+
+            <div class="text-center">
+                <input class="btn btn-primary" 
+                       type="button" 
+                       id="btnNuevo"  
+                       value="Nuevo"/>
+            </div>
+
+            <p/>
+                
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Fabricante</th>
+                        <th>Modelo</th>
+                        <th>Año</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAviones">
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-xs-0 col-sm-2"></div>
+    </div>    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

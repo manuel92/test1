@@ -36,13 +36,15 @@ function leerRecursoEstatico(request, response){
                           break;
             case 'css'  : mimeType = 'text/css';
                           break;
+            case 'js'  :  mimeType = 'application/javascript';
+                          break;
             //case ...
             default : mimeType = 'text/plain';
                       break;
         }
 
         response.writeHead(200, { 'content-type' : mimeType });
-        response.end(data.toString()); //response.write
+        response.end(data.toString()); 
     });   
 
 }
